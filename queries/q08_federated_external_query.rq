@@ -1,0 +1,29 @@
+# Запит 8: Федеративний SPARQL-запит до зовнішньої бази знань DBpedia
+# Конструкції: SELECT, VALUES, SERVICE, OPTIONAL, FILTER
+PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+SELECT ?localAsset ?localLabel ?localPowerMW ?dbpediaResource ?externalLabel ?lat ?long ?externalCapacity
+WHERE {
+    VALUES (?localAsset ?dbpediaResource) {
+        (:KhmelnytskyiNPP_Unit1 dbr:Khmelnytskyi_Nuclear_Power_Plant)
+        (:Dnipro_HPP_Unit1 dbr:Dnieper_Hydroelectric_Station)
+        (:Trypilska_ThermalPowerPlant dbr:Trypilska_thermal_power_plant)
+    }
+    ?localAsset rdfs:label ?localLabel ;
+                :hasRatedActivePowerMW ?localPowerMW .
+    SERVICE <https://dbpedia.org/sparql> {
+        ?dbpediaResource rdfs:label ?externalLabel .
+        OPTIONAL {
+            ?dbpediaResource geo:lat ?lat ;
+                             geo:long ?long .
+        }
+        OPTIONAL {
+            ?dbpediaResource dbo:installedCapacity ?externalCapacity .
+        }
+        FILTER(LANG(?externalLabel) = "en")
+    }
+}

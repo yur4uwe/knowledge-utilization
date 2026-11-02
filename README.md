@@ -80,6 +80,13 @@ uv sync
 
 ---
 
+## Claims Management
+
+CLI tool for managing claims in the `claims/claims.csv` file. Please refer to `claim.bash --help` for further documentation and usage.
+Claims must ONLY be managed via the CLI tool.
+
+---
+
 ## Environment and Secrets Management
 
 Configuration parameters and API credentials must be managed via local environment variables.

@@ -1,0 +1,40 @@
+# Linked Open Data (LOD) Mappings
+# Mappings between local energy ontology entities and global knowledge graphs (Wikidata, DBpedia)
+@prefix : <http://www.semanticweb.org/ontologies/2026/energy-system#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+
+# 1. Хмельницька АЕС
+:KhmelnytskyiNPP_Unit1
+    skos:closeMatch wd:Q1037144 , dbr:Khmelnytskyi_Nuclear_Power_Plant ;
+    rdfs:comment "Зв'язок skos:closeMatch (впевненість 0.92): локальна сутність є окремим енергоблоком №1, тоді як сутність Wikidata/DBpedia представляє весь майданчик електростанції."@uk .
+
+# 2. Дністровська ГАЕС
+:Dniester_PSPS_Unit
+    skos:closeMatch wd:Q1153545 , dbr:Dniester_Pumped_Storage_Power_Station ;
+    rdfs:comment "Зв'язок skos:closeMatch (впевненість 0.90): гідроагрегат №1 відноситься до загального комплексу Дністровської ГАЕС."@uk .
+
+# 3. Дніпровська ГЕС
+:Dnipro_HPP_Unit1
+    skos:closeMatch wd:Q738619 , dbr:Dnieper_Hydroelectric_Station ;
+    rdfs:comment "Зв'язок skos:closeMatch (впевненість 0.90): локальний гідроагрегат та станція DniproHPP у Запоріжжі."@uk .
+
+# 4. Трипільська ТЕС
+:Trypilska_ThermalPowerPlant
+    skos:exactMatch wd:Q12007778 , dbr:Trypilska_thermal_power_plant ;
+    owl:sameAs wd:Q12007778 ;
+    rdfs:comment "Зв'язок skos:exactMatch / owl:sameAs (впевненість 0.99): повний ідентичний збіг електростанції в Українці Київської області."@uk .
+
+# 5. НЕК «Укренерго»
+:Ukrenergo_National_TSO
+    skos:exactMatch wd:Q12132842 , dbr:Ukrenergo ;
+    owl:sameAs wd:Q12132842 ;
+    rdfs:comment "Зв'язок skos:exactMatch / owl:sameAs (впевненість 1.00): тотожність державної юридичної особи — оператора системи передачі України."@uk .
+
+# 6. ВІДХИЛЕНИЙ ЗВ'ЯЗОК (Candidate rejected during verification)
+# Кандидат: :Pokrovska_Solar_SES -> wd:Q108882857 (Шахтоуправління «Покровське»)
+# Статус: REJECTED (впевненість 0.05)
+# Причина: Помилковий текстовий збіг (false positive). Об'єкт у Wikidata є вугільним підприємством на Донеччині, тоді як локальна сутність є СЕС 240 МВт на Дніпропетровщині.

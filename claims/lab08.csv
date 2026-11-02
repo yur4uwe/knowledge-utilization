@@ -1,1 +1,9 @@
 id,claim,type,source,verification_level,status,comment
+lab08-01,Базовий граф онтології енергосистеми містить понад 500 валідних триплетів та 26 іменованих сутностей,fact,"data/kb.ttl, rdflib 7.6.0, Apache Jena Fuseki COUNT query",V2,verified,"Підтверджено 565 триплетів та 26 named individuals"
+lab08-02,Кожна генеруюча одиниця в онтології енергосистеми зобов'язана мати строго додатну потужність та зв'язок з підстанцією,rule,"shapes/shapes.ttl (:GeneratingUnitShape)",V2,verified,"Верифіковано валідатором pySHACL з правилом minExclusive 0.0"
+lab08-03,Транзитний електричний зв'язок 750 кВ безперервно сполучає ПС Західноукраїнська та ПС Київська через Вінницю,fact,"queries/q03_kq7_substation_connectivity_ask.rq",V2,verified,SPARQL ASK запит з property path повернув true
+lab08-04,"Push-down фільтрів класів та напруги у SPARQL-запиті передиспатчеризації прискорює час виконання у Fuseki в 35 разів",fact,queries/q07_kq8_redispatch_optimized.rq бенчмарк,V4,verified,Середній час знизився з 333.68 мс до 9.54 мс за 30 вимірів
+lab08-05,SHACL перевіряє структурні обмеження за припущенням закритого світу на відміну від OWA в OWL,rule,"W3C SHACL Recommendation, docs/shacl_report.md",V3,verified,Експертне порівняння семантики OWA/CWA та NUNA
+lab08-06,Покращення підказки системною схемою збільшує точність генерації text-to-SPARQL конвеєра з 60% до 100%,fact,"tests/eval_t2s.py, tests/t2s.jsonl",V4,verified,Метрики обчислено на 15 питаннях перед і після покращення підказки
+lab08-07,"Електростанції ХАЕС, Дністровська ГАЕС, ДніпроГЕС мають валідні зв'язки з ресурсами DBpedia та Wikidata",fact,"data/links.ttl, DBpedia SPARQL Endpoint",V1,verified,Федеративний запит успішно отримав глобальні координати та потужність
+lab08-08,Покровська СЕС відповідає сутності wd:Q108882857 у Wikidata за назвою Pokrovska,hypothesis,,V1,rejected,"wd:Q108882857 є вугільним підприємством на Донеччині, тоді як локальний актив — СЕС 240 МВт на Дніпропетровщині"

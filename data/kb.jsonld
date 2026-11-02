@@ -1,0 +1,2680 @@
+[
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#BatteryStorageBESS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Акумуляторна система накопичення"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyStorage"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Повітряна лінія"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#TransmissionLine"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#InsulationDegradation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Деградація ізоляції"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EquipmentDefect"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b18",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DispatchableGen"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#VREGeneration"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#RelayProtection_Trip_Line750",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#RelayProtectionAction"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "PROC-PROT-TRIP-750"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasTripTimeMS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 65
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#protects": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Zakhidna_Vinnytska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Спрацювання захисту ПЛ 750 кВ"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PumpedStorageHydro",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:HydroPump"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Гідроакумулююча станція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyStorage"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OperationalViolation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:OperationalLimitViolation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Режимне порушення"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "OWL 2 онтологія управління енергосистемами за стандартами IEC CIM."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Онтологія управління енергетичними системами"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Zaporizhia_Wind_WPP",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#WindPowerPlant"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-WPP-ZAP"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_VARIABLE"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 98.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 150.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Запорізька ВЕС"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Системний актор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#LineOverload",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Перевантаження лінії"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OperationalViolation"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "експлуатаційний стан"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Line_Overload_Vinnytska_330kV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#LineOverload"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "EVT-2026-OVLD-330"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#triggers": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Redispatch_Contingency_Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Перевантаження суміжної ПЛ 330 кВ"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#TransmissionLine",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:ACLineSegment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Магістральна лінія електропередачі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridFault",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:Fault"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Пошкодження мережі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b25"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "видає потужність на"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#receivesPowerFrom"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GenerationUnit"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyStorage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DissolvedGasAnalysis",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:ConditionAssessment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Аналіз розчинених газів"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DiagnosticProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Dnipro_HPP_Unit1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#HydroPowerPlant"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-HPP-DNIPRO"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_LOAD_FOLLOWING"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 75.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 330.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Дніпровська ГЕС, Гідроагрегат №1"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#monitors",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b31"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "здійснює моніторинг"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b34"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#isMonitoredBy"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b31",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b34",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:Substation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Електрична підстанція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Transformer_T1_Kyivska",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#PowerTransformer"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-TR-T1-KYIV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_LOADED"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 1000.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#partOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Kyivska_Substation_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Автотрансформатор АТ-1 ПС Київська 750/330 кВ"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#operates",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "керує процесом"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Базовий абстрактний клас усіх сутностей енергосистеми."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Концепт енергетичної системи"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Trypilska_ThermalPowerPlant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#ThermalPowerPlant"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-TPP-TRYP"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_DISPATCHABLE"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 600.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 330.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Kyivska_Substation_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Трипільська ТЕС"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b52"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "клас номінальної напруги (кВ)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b52",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EquipmentDefect",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Дефект обладнання"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Dispatcher_Duty_Shift",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#ControlCenterDispatcher"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-ACTOR-DISP-CENTRAL"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#monitors": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Frequency_Drop_Event_50Hz"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#operates": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#FCR_Primary_Frequency_Response"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Черговий диспетчер ЦДП"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#KhmelnytskyiNPP_Unit1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#NuclearPowerPlant"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-KNPP-01"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_BASELOAD"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 1000.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Zakhidnoukrainska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Хмельницька АЕС, Енергоблок №1"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#UndergroundCable",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Кабельна лінія"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#TransmissionLine"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasHydrogenConcentrationPPM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DissolvedGasAnalysis"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "концентрація водню H2 (ppm)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Ukrenergo_National_TSO",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#TransmissionSystemOperator"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-ACTOR-TSO-UKRENERGO"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#monitors": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Zakhidna_Vinnytska_750kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#operates": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Redispatch_Contingency_Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "НЕК «Укренерго»"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#causes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b49"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "спричиняє"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b49",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasPart",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "містить у складі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#partOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasFaultCurrentKA",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ShortCircuitFault"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "струм короткого замикання (кА)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:Equipment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Мережева інфраструктура"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "номінальна активна потужність (МВт)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Insulation_Defect_AT1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#InsulationDegradation"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "EVT-2026-DEFECT-DGA-AT1"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#triggers": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DGA_Oil_Diagnostic_AT1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Деструкція діелектрика в баку АТ-1"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Zakhidnoukrainska_750kV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#Substation"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#connectedTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Zakhidna_Vinnytska_750kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-SUBST-ZAKH-750"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "ENERGIZED_OPERATIONAL"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasPart": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Autotransformer_AT1_Zakhidna"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ПС 750 кВ «Західноукраїнська»"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#activates",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "активує"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#triggers",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ініціює запуск"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#isTriggeredBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NuclearPowerPlant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:NuclearGeneratingUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Атомна електростанція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DispatchableGen"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:IdentifiedObject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Актив енергосистеми"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#HighVoltageEquipment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Клас високовольтного обладнання з напругою від 330 кВ."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Високовольтне обладнання"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+          },
+          {
+            "@id": "_:nc72b789d30104b8bb43d58945026ff00b2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b3"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b3",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2002/07/owl#onDatatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#withRestrictions": [
+      {
+        "@list": [
+          {
+            "@id": "_:nc72b789d30104b8bb43d58945026ff00b4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b4",
+    "http://www.w3.org/2001/XMLSchema#minInclusive": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 330.0
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Redispatch_Contingency_Process",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#RedispatchProcess"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "PROC-REDISP-N1-OPT"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#regulates": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#KhmelnytskyiNPP_Unit1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Протиаварійна передиспатчеризація N-1"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b13",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GenerationUnit"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyStorage"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyConsumer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyStorage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:BatteryUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Система накопичення енергії"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ShortCircuitFault",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Коротке замикання"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridFault"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#Substation"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#connectedTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Zakhidna_Vinnytska_750kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-SUBST-VINN-750"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "ENERGIZED_OPERATIONAL"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ПС 750 кВ «Вінницька»"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Pokrovska_Solar_SES",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#SolarPowerPlant"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-SES-POKR"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_VARIABLE"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 240.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 330.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Покровська СЕС"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PrimaryFrequencyControl",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Первинне регулювання частоти"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridBalancingProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Kakhovka_Solar_SES",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#SolarPowerPlant"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-SES-KAKH"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_VARIABLE"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 120.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 150.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Каховська СЕС"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#partOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є складовою частиною"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasPart"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#connectedTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "з'єднаний з"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Dniester_PSPS_Unit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#PumpedStorageHydro"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-GEN-PSPS-DNIEST"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "STANDBY_SPINNING_RESERVE"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 324.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 330.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Дністровська ГАЕС, Гідроагрегат №1"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SolarPowerPlant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:SolarGeneratingUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Сонячна електростанція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#VREGeneration"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Kyiv_Residential_Consumer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#ResidentialConsumer"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-LOAD-KYIV-RES"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "LOAD_ACTIVE_BASE"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 250.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 110.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Київський побутовий споживач"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b21",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#TransmissionLine"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerTransformer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ResidentialConsumer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Побутовий споживач"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyConsumer"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ContingencyProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Протиаварійне керування"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyConsumer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:EnergyConsumer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Споживач електроенергії"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#VREGeneration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Відновлювана генерація"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GenerationUnit"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerTransformer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:PowerTransformer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Силовий автотрансформатор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#HydroPowerPlant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:HydroGeneratingUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Гідроелектростанція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DispatchableGen"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#WindPowerPlant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:WindGeneratingUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Вітрова електростанція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#VREGeneration"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Frequency_Drop_Event_50Hz",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#FrequencyDeviation"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "EVT-2026-FREQ-DROP"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasGridFrequencyHz": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 49.88
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#triggers": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#FCR_Primary_Frequency_Response"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Спад частоти до 49.88 Гц"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#isMonitoredBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b37"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "контролюється"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b40"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#monitors"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b37",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b40",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#FCR_Primary_Frequency_Response",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#PrimaryFrequencyControl"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#activates": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Dniester_PSPS_Unit"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "PROC-BAL-FCR-01"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#regulates": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Frequency_Drop_Event_50Hz"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Активація первинного регулювання FCR"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SecondaryFrequencyRestoration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Вторинне регулювання частоти"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridBalancingProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Autotransformer_AT1_Zakhidna",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#PowerTransformer"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-TR-AT1-ZAKH"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_LOADED"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 1000.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#partOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Zakhidnoukrainska_750kV"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Автотрансформатор АТ-1 750/330 кВ"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#FrequencyDeviation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Відхилення частоти"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OperationalViolation"
+      }
+    ]
+  },
+  {
+    "@id": "http://iec.ch/TC57/CIM#iecStandard",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#isTriggeredBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "викликаний подією"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#triggers"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ControlCenterDispatcher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Диспетчерський персонал"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#receivesPowerFrom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "приймає потужність від"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b28"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#suppliesPowerTo"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b28",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GenerationUnit"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyStorage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#regulates",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "регулює"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b46"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b46",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#protects",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:nc72b789d30104b8bb43d58945026ff00b43"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "захищає"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#NetworkInfra"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b43",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#RelayProtectionAction"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DiagnosticProcess"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DGA_Oil_Diagnostic_AT1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#DissolvedGasAnalysis"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAcetyleneConcentrationPPM": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 12.4
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "PROC-DIAG-DGA-AT1"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasHydrogenConcentrationPPM": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 145.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#monitors": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Insulation_Defect_AT1"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#protects": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Autotransformer_AT1_Zakhidna"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Аналіз масла АТ-1"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#TransmissionSystemOperator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:ControlArea"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Оператор системи передачі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DispatchableGen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Диспетчеризована генерація"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GenerationUnit"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Lviv_Industrial_Consumer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#IndustrialConsumer"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-LOAD-LVIV-IND"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "LOAD_ACTIVE_DR_ENABLED"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasRatedActivePowerMW": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 180.0
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 110.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Львівський промисловий енерговузол"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ThermalPowerPlant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:ThermalGeneratingUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Теплова електростанція"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DispatchableGen"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Kyivska_Substation_750kV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#Substation"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#connectedTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Vinnytska_Kyivska_750kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-SUBST-KYIV-750"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "ENERGIZED_OPERATIONAL"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasPart": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Transformer_T1_Kyivska"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ПС 750 кВ «Київська»"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridBalancingProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Процес балансування частоти"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasAcetyleneConcentrationPPM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DissolvedGasAnalysis"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "концентрація ацетилену C2H2 (ppm)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ідентифікатор CIM mRID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Системний процес"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasGridFrequencyHz",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#FrequencyDeviation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "фактична частота мережі (Гц)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Системна подія"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#PowerSystemConcept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ShortCircuit_Fault_Line750",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#ShortCircuitFault"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#causes": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Line_Overload_Vinnytska_330kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "EVT-2026-FAULT-SC-01"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasFaultCurrentKA": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 24.5
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#triggers": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#RelayProtection_Trip_Line750"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Коротке замикання на ПЛ 750 кВ"
+      }
+    ]
+  },
+  {
+    "@id": "_:nc72b789d30104b8bb43d58945026ff00b8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemEvent"
+          },
+          {
+            "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#BalanceResponsibleParty",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Сторона відповідальна за баланс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemActor"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#RedispatchProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:RemedialActionScheme"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Передиспатчеризація потужності"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ContingencyProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Vinnytska_Kyivska_750kV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#connectedTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      },
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Kyivska_Substation_750kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-OHL-750-VK"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_TRANSMITTING"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ПЛ 750 кВ Вінницька — Київська"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine_Zakhidna_Vinnytska_750kV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.semanticweb.org/ontologies/2026/energy-system#OverheadLine"
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#connectedTo": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Zakhidnoukrainska_750kV"
+      },
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#Substation_Vinnytska_750kV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasAssetIdentifier": [
+      {
+        "@value": "UA-OHL-750-ZV"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasOperatingStatus": [
+      {
+        "@value": "IN_SERVICE_TRANSMITTING"
+      }
+    ],
+    "http://www.semanticweb.org/ontologies/2026/energy-system#hasVoltageLevelKV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#double",
+        "@value": 750.0
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ПЛ 750 кВ Західноукраїнська — Вінницька"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#RelayProtectionAction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:ProtectionRelay"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Дія релейного захисту"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#ContingencyProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GenerationUnit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://iec.ch/TC57/CIM#iecStandard": [
+      {
+        "@value": "cim:GeneratingUnit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Генеруюча одиниця"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#GridAsset"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#hasTripTimeMS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#RelayProtectionAction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "час спрацювання (мс)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#DiagnosticProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Технічна діагностика"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#SystemProcess"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#IndustrialConsumer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Промисловий споживач"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.semanticweb.org/ontologies/2026/energy-system#EnergyConsumer"
+      }
+    ]
+  }
+]

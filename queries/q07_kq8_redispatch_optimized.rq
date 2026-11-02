@@ -1,0 +1,15 @@
+# KQ8: Пошук потужних генеруючих одиниць для передиспатчеризації (Оптимізований варіант)
+# Особливість: предикати з індексацією класів, раннє звуження простору пошуку за напругою 750 кВ
+PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?gen ?label ?powerMW ?substation
+WHERE {
+    ?substation a :Substation ;
+                :hasVoltageLevelKV 750.0 .
+    ?gen :suppliesPowerTo ?substation ;
+         :hasRatedActivePowerMW ?powerMW ;
+         rdfs:label ?label .
+    FILTER (?powerMW >= 100.0)
+}
+ORDER BY DESC(?powerMW)

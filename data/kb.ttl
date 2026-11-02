@@ -1,0 +1,581 @@
+@prefix : <http://www.semanticweb.org/ontologies/2026/energy-system#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cim: <http://iec.ch/TC57/CIM#> .
+
+<http://www.semanticweb.org/ontologies/2026/energy-system> rdf:type owl:Ontology ;
+    rdfs:label "Онтологія управління енергетичними системами"@uk ;
+    rdfs:comment "OWL 2 онтологія управління енергосистемами за стандартами IEC CIM."@uk ;
+    owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Annotation Properties
+#################################################################
+
+cim:iecStandard rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Classes Hierarchy
+#################################################################
+
+### Root Concept
+:PowerSystemConcept rdf:type owl:Class ;
+    rdfs:label "Концепт енергетичної системи"@uk ;
+    rdfs:comment "Базовий абстрактний клас усіх сутностей енергосистеми."@uk .
+
+### 1. Grid Assets
+:GridAsset rdf:type owl:Class ;
+    rdfs:subClassOf :PowerSystemConcept ;
+    rdfs:label "Актив енергосистеми"@uk ;
+    cim:iecStandard "cim:IdentifiedObject" .
+
+:GenerationUnit rdf:type owl:Class ;
+    rdfs:subClassOf :GridAsset ;
+    rdfs:label "Генеруюча одиниця"@uk ;
+    cim:iecStandard "cim:GeneratingUnit" .
+
+:DispatchableGen rdf:type owl:Class ;
+    rdfs:subClassOf :GenerationUnit ;
+    rdfs:label "Диспетчеризована генерація"@uk .
+
+:NuclearPowerPlant rdf:type owl:Class ;
+    rdfs:subClassOf :DispatchableGen ;
+    rdfs:label "Атомна електростанція"@uk ;
+    cim:iecStandard "cim:NuclearGeneratingUnit" .
+
+:ThermalPowerPlant rdf:type owl:Class ;
+    rdfs:subClassOf :DispatchableGen ;
+    rdfs:label "Теплова електростанція"@uk ;
+    cim:iecStandard "cim:ThermalGeneratingUnit" .
+
+:HydroPowerPlant rdf:type owl:Class ;
+    rdfs:subClassOf :DispatchableGen ;
+    rdfs:label "Гідроелектростанція"@uk ;
+    cim:iecStandard "cim:HydroGeneratingUnit" .
+
+:VREGeneration rdf:type owl:Class ;
+    rdfs:subClassOf :GenerationUnit ;
+    rdfs:label "Відновлювана генерація"@uk .
+
+:WindPowerPlant rdf:type owl:Class ;
+    rdfs:subClassOf :VREGeneration ;
+    rdfs:label "Вітрова електростанція"@uk ;
+    cim:iecStandard "cim:WindGeneratingUnit" .
+
+:SolarPowerPlant rdf:type owl:Class ;
+    rdfs:subClassOf :VREGeneration ;
+    rdfs:label "Сонячна електростанція"@uk ;
+    cim:iecStandard "cim:SolarGeneratingUnit" .
+
+:NetworkInfra rdf:type owl:Class ;
+    rdfs:subClassOf :GridAsset ;
+    rdfs:label "Мережева інфраструктура"@uk ;
+    cim:iecStandard "cim:Equipment" .
+
+:TransmissionLine rdf:type owl:Class ;
+    rdfs:subClassOf :NetworkInfra ;
+    rdfs:label "Магістральна лінія електропередачі"@uk ;
+    cim:iecStandard "cim:ACLineSegment" .
+
+:OverheadLine rdf:type owl:Class ;
+    rdfs:subClassOf :TransmissionLine ;
+    rdfs:label "Повітряна лінія"@uk .
+
+:UndergroundCable rdf:type owl:Class ;
+    rdfs:subClassOf :TransmissionLine ;
+    rdfs:label "Кабельна лінія"@uk .
+
+:Substation rdf:type owl:Class ;
+    rdfs:subClassOf :NetworkInfra ;
+    rdfs:label "Електрична підстанція"@uk ;
+    cim:iecStandard "cim:Substation" .
+
+:PowerTransformer rdf:type owl:Class ;
+    rdfs:subClassOf :NetworkInfra ;
+    rdfs:label "Силовий автотрансформатор"@uk ;
+    cim:iecStandard "cim:PowerTransformer" .
+
+:EnergyStorage rdf:type owl:Class ;
+    rdfs:subClassOf :GridAsset ;
+    rdfs:label "Система накопичення енергії"@uk ;
+    cim:iecStandard "cim:BatteryUnit" .
+
+:BatteryStorageBESS rdf:type owl:Class ;
+    rdfs:subClassOf :EnergyStorage ;
+    rdfs:label "Акумуляторна система накопичення"@uk .
+
+:PumpedStorageHydro rdf:type owl:Class ;
+    rdfs:subClassOf :EnergyStorage ;
+    rdfs:label "Гідроакумулююча станція"@uk ;
+    cim:iecStandard "cim:HydroPump" .
+
+:EnergyConsumer rdf:type owl:Class ;
+    rdfs:subClassOf :GridAsset ;
+    rdfs:label "Споживач електроенергії"@uk ;
+    cim:iecStandard "cim:EnergyConsumer" .
+
+:IndustrialConsumer rdf:type owl:Class ;
+    rdfs:subClassOf :EnergyConsumer ;
+    rdfs:label "Промисловий споживач"@uk .
+
+:ResidentialConsumer rdf:type owl:Class ;
+    rdfs:subClassOf :EnergyConsumer ;
+    rdfs:label "Побутовий споживач"@uk .
+
+### 2. System Processes
+:SystemProcess rdf:type owl:Class ;
+    rdfs:subClassOf :PowerSystemConcept ;
+    rdfs:label "Системний процес"@uk .
+
+:GridBalancingProcess rdf:type owl:Class ;
+    rdfs:subClassOf :SystemProcess ;
+    rdfs:label "Процес балансування частоти"@uk .
+
+:PrimaryFrequencyControl rdf:type owl:Class ;
+    rdfs:subClassOf :GridBalancingProcess ;
+    rdfs:label "Первинне регулювання частоти"@uk .
+
+:SecondaryFrequencyRestoration rdf:type owl:Class ;
+    rdfs:subClassOf :GridBalancingProcess ;
+    rdfs:label "Вторинне регулювання частоти"@uk .
+
+:ContingencyProcess rdf:type owl:Class ;
+    rdfs:subClassOf :SystemProcess ;
+    rdfs:label "Протиаварійне керування"@uk .
+
+:RelayProtectionAction rdf:type owl:Class ;
+    rdfs:subClassOf :ContingencyProcess ;
+    rdfs:label "Дія релейного захисту"@uk ;
+    cim:iecStandard "cim:ProtectionRelay" .
+
+:RedispatchProcess rdf:type owl:Class ;
+    rdfs:subClassOf :ContingencyProcess ;
+    rdfs:label "Передиспатчеризація потужності"@uk ;
+    cim:iecStandard "cim:RemedialActionScheme" .
+
+:DiagnosticProcess rdf:type owl:Class ;
+    rdfs:subClassOf :SystemProcess ;
+    rdfs:label "Технічна діагностика"@uk .
+
+:DissolvedGasAnalysis rdf:type owl:Class ;
+    rdfs:subClassOf :DiagnosticProcess ;
+    rdfs:label "Аналіз розчинених газів"@uk ;
+    cim:iecStandard "cim:ConditionAssessment" .
+
+### 3. System Events & Disturbances
+:SystemEvent rdf:type owl:Class ;
+    rdfs:subClassOf :PowerSystemConcept ;
+    rdfs:label "Системна подія"@uk .
+
+:GridFault rdf:type owl:Class ;
+    rdfs:subClassOf :SystemEvent ;
+    rdfs:label "Пошкодження мережі"@uk ;
+    cim:iecStandard "cim:Fault" .
+
+:ShortCircuitFault rdf:type owl:Class ;
+    rdfs:subClassOf :GridFault ;
+    rdfs:label "Коротке замикання"@uk .
+
+:OperationalViolation rdf:type owl:Class ;
+    rdfs:subClassOf :SystemEvent ;
+    rdfs:label "Режимне порушення"@uk ;
+    cim:iecStandard "cim:OperationalLimitViolation" .
+
+:LineOverload rdf:type owl:Class ;
+    rdfs:subClassOf :OperationalViolation ;
+    rdfs:label "Перевантаження лінії"@uk .
+
+:FrequencyDeviation rdf:type owl:Class ;
+    rdfs:subClassOf :OperationalViolation ;
+    rdfs:label "Відхилення частоти"@uk .
+
+:EquipmentDefect rdf:type owl:Class ;
+    rdfs:subClassOf :SystemEvent ;
+    rdfs:label "Дефект обладнання"@uk .
+
+:InsulationDegradation rdf:type owl:Class ;
+    rdfs:subClassOf :EquipmentDefect ;
+    rdfs:label "Деградація ізоляції"@uk .
+
+### 4. System Actors
+:SystemActor rdf:type owl:Class ;
+    rdfs:subClassOf :PowerSystemConcept ;
+    rdfs:label "Системний актор"@uk .
+
+:TransmissionSystemOperator rdf:type owl:Class ;
+    rdfs:subClassOf :SystemActor ;
+    rdfs:label "Оператор системи передачі"@uk ;
+    cim:iecStandard "cim:ControlArea" .
+
+:ControlCenterDispatcher rdf:type owl:Class ;
+    rdfs:subClassOf :SystemActor ;
+    rdfs:label "Диспетчерський персонал"@uk .
+
+:BalanceResponsibleParty rdf:type owl:Class ;
+    rdfs:subClassOf :SystemActor ;
+    rdfs:label "Сторона відповідальна за баланс"@uk .
+
+### Defined / Inferred Class
+:HighVoltageEquipment rdf:type owl:Class ;
+    rdfs:label "Високовольтне обладнання"@uk ;
+    rdfs:subClassOf :NetworkInfra ;
+    owl:equivalentClass [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :NetworkInfra
+            [ rdf:type owl:Restriction ;
+              owl:onProperty :hasVoltageLevelKV ;
+              owl:someValuesFrom [
+                  rdf:type rdfs:Datatype ;
+                  owl:onDatatype xsd:double ;
+                  owl:withRestrictions ( [ xsd:minInclusive "330.0"^^xsd:double ] )
+              ]
+            ]
+        )
+    ] ;
+    rdfs:comment "Клас високовольтного обладнання з напругою від 330 кВ."@uk .
+
+#################################################################
+#    Disjoint Classes Axioms
+#################################################################
+
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :GridAsset :SystemProcess :SystemEvent :SystemActor ) .
+
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :GenerationUnit :NetworkInfra :EnergyStorage :EnergyConsumer ) .
+
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :DispatchableGen :VREGeneration ) .
+
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :TransmissionLine :Substation :PowerTransformer ) .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:suppliesPowerTo rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :GenerationUnit :EnergyStorage ) ] ;
+    rdfs:range :Substation ;
+    owl:inverseOf :receivesPowerFrom ;
+    rdfs:label "видає потужність на"@uk .
+
+:receivesPowerFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :Substation ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( :GenerationUnit :EnergyStorage ) ] ;
+    owl:inverseOf :suppliesPowerTo ;
+    rdfs:label "приймає потужність від"@uk .
+
+:connectedTo rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
+    rdfs:domain :NetworkInfra ;
+    rdfs:range :NetworkInfra ;
+    rdfs:label "з'єднаний з"@uk .
+
+:partOf rdf:type owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:domain :PowerSystemConcept ;
+    rdfs:range :PowerSystemConcept ;
+    owl:inverseOf :hasPart ;
+    rdfs:label "є складовою частиною"@uk .
+
+:hasPart rdf:type owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:domain :PowerSystemConcept ;
+    rdfs:range :PowerSystemConcept ;
+    owl:inverseOf :partOf ;
+    rdfs:label "містить у складі"@uk .
+
+:monitors rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :SystemActor :SystemProcess ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( :GridAsset :SystemEvent ) ] ;
+    owl:inverseOf :isMonitoredBy ;
+    rdfs:label "здійснює моніторинг"@uk .
+
+:isMonitoredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :GridAsset :SystemEvent ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( :SystemActor :SystemProcess ) ] ;
+    owl:inverseOf :monitors ;
+    rdfs:label "контролюється"@uk .
+
+:triggers rdf:type owl:ObjectProperty ;
+    rdfs:domain :SystemEvent ;
+    rdfs:range :SystemProcess ;
+    owl:inverseOf :isTriggeredBy ;
+    rdfs:label "ініціює запуск"@uk .
+
+:isTriggeredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :SystemProcess ;
+    rdfs:range :SystemEvent ;
+    owl:inverseOf :triggers ;
+    rdfs:label "викликаний подією"@uk .
+
+:protects rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :RelayProtectionAction :DiagnosticProcess ) ] ;
+    rdfs:range :NetworkInfra ;
+    rdfs:label "захищає"@uk .
+
+:operates rdf:type owl:ObjectProperty ;
+    rdfs:domain :SystemActor ;
+    rdfs:range :SystemProcess ;
+    rdfs:label "керує процесом"@uk .
+
+:regulates rdf:type owl:ObjectProperty ;
+    rdfs:domain :SystemProcess ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( :GridAsset :SystemEvent ) ] ;
+    rdfs:label "регулює"@uk .
+
+:causes rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :SystemEvent :SystemProcess ) ] ;
+    rdfs:range :SystemEvent ;
+    rdfs:label "спричиняє"@uk .
+
+:activates rdf:type owl:ObjectProperty ;
+    rdfs:domain :SystemProcess ;
+    rdfs:range :GridAsset ;
+    rdfs:label "активує"@uk .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+:hasRatedActivePowerMW rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :GridAsset ;
+    rdfs:range xsd:double ;
+    rdfs:label "номінальна активна потужність (МВт)"@uk .
+
+:hasVoltageLevelKV rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :NetworkInfra :GridAsset ) ] ;
+    rdfs:range xsd:double ;
+    rdfs:label "клас номінальної напруги (кВ)"@uk .
+
+:hasGridFrequencyHz rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :FrequencyDeviation ;
+    rdfs:range xsd:double ;
+    rdfs:label "фактична частота мережі (Гц)"@uk .
+
+:hasFaultCurrentKA rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :ShortCircuitFault ;
+    rdfs:range xsd:double ;
+    rdfs:label "струм короткого замикання (кА)"@uk .
+
+:hasOperatingStatus rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :GridAsset ;
+    rdfs:range xsd:string ;
+    rdfs:label "експлуатаційний стан"@uk .
+
+:hasTripTimeMS rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :RelayProtectionAction ;
+    rdfs:range xsd:integer ;
+    rdfs:label "час спрацювання (мс)"@uk .
+
+:hasHydrogenConcentrationPPM rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :DissolvedGasAnalysis ;
+    rdfs:range xsd:double ;
+    rdfs:label "концентрація водню H2 (ppm)"@uk .
+
+:hasAcetyleneConcentrationPPM rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :DissolvedGasAnalysis ;
+    rdfs:range xsd:double ;
+    rdfs:label "концентрація ацетилену C2H2 (ppm)"@uk .
+
+:hasAssetIdentifier rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain :PowerSystemConcept ;
+    rdfs:range xsd:string ;
+    rdfs:label "ідентифікатор CIM mRID"@uk .
+
+#################################################################
+#    Named Individuals (Instances)
+#################################################################
+
+### Generation Units
+:KhmelnytskyiNPP_Unit1 rdf:type owl:NamedIndividual , :NuclearPowerPlant ;
+    :hasAssetIdentifier "UA-GEN-KNPP-01" ;
+    :hasRatedActivePowerMW "1000.0"^^xsd:double ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_BASELOAD" ;
+    :suppliesPowerTo :Substation_Zakhidnoukrainska_750kV ;
+    rdfs:label "Хмельницька АЕС, Енергоблок №1"@uk .
+
+:Pokrovska_Solar_SES rdf:type owl:NamedIndividual , :SolarPowerPlant ;
+    :hasAssetIdentifier "UA-GEN-SES-POKR" ;
+    :hasRatedActivePowerMW "240.0"^^xsd:double ;
+    :hasVoltageLevelKV "330.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_VARIABLE" ;
+    :suppliesPowerTo :Substation_Vinnytska_750kV ;
+    rdfs:label "Покровська СЕС"@uk .
+
+:Dniester_PSPS_Unit rdf:type owl:NamedIndividual , :PumpedStorageHydro ;
+    :hasAssetIdentifier "UA-GEN-PSPS-DNIEST" ;
+    :hasRatedActivePowerMW "324.0"^^xsd:double ;
+    :hasVoltageLevelKV "330.0"^^xsd:double ;
+    :hasOperatingStatus "STANDBY_SPINNING_RESERVE" ;
+    :suppliesPowerTo :Substation_Vinnytska_750kV ;
+    rdfs:label "Дністровська ГАЕС, Гідроагрегат №1"@uk .
+
+### Network Infrastructure
+:Substation_Zakhidnoukrainska_750kV rdf:type owl:NamedIndividual , :Substation ;
+    :hasAssetIdentifier "UA-SUBST-ZAKH-750" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasOperatingStatus "ENERGIZED_OPERATIONAL" ;
+    :connectedTo :OverheadLine_Zakhidna_Vinnytska_750kV ;
+    :hasPart :Autotransformer_AT1_Zakhidna ;
+    rdfs:label "ПС 750 кВ «Західноукраїнська»"@uk .
+
+:Substation_Vinnytska_750kV rdf:type owl:NamedIndividual , :Substation ;
+    :hasAssetIdentifier "UA-SUBST-VINN-750" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasOperatingStatus "ENERGIZED_OPERATIONAL" ;
+    :connectedTo :OverheadLine_Zakhidna_Vinnytska_750kV ;
+    rdfs:label "ПС 750 кВ «Вінницька»"@uk .
+
+:OverheadLine_Zakhidna_Vinnytska_750kV rdf:type owl:NamedIndividual , :OverheadLine ;
+    :hasAssetIdentifier "UA-OHL-750-ZV" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_TRANSMITTING" ;
+    :connectedTo :Substation_Zakhidnoukrainska_750kV , :Substation_Vinnytska_750kV ;
+    rdfs:label "ПЛ 750 кВ Західноукраїнська — Вінницька"@uk .
+
+:Autotransformer_AT1_Zakhidna rdf:type owl:NamedIndividual , :PowerTransformer ;
+    :hasAssetIdentifier "UA-TR-AT1-ZAKH" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasRatedActivePowerMW "1000.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_LOADED" ;
+    :partOf :Substation_Zakhidnoukrainska_750kV ;
+    rdfs:label "Автотрансформатор АТ-1 750/330 кВ"@uk .
+
+### Consumers
+:Lviv_Industrial_Consumer rdf:type owl:NamedIndividual , :IndustrialConsumer ;
+    :hasAssetIdentifier "UA-LOAD-LVIV-IND" ;
+    :hasRatedActivePowerMW "180.0"^^xsd:double ;
+    :hasVoltageLevelKV "110.0"^^xsd:double ;
+    :hasOperatingStatus "LOAD_ACTIVE_DR_ENABLED" ;
+    rdfs:label "Львівський промисловий енерговузол"@uk .
+
+### System Actors
+:Ukrenergo_National_TSO rdf:type owl:NamedIndividual , :TransmissionSystemOperator ;
+    :hasAssetIdentifier "UA-ACTOR-TSO-UKRENERGO" ;
+    :operates :Redispatch_Contingency_Process ;
+    :monitors :OverheadLine_Zakhidna_Vinnytska_750kV ;
+    rdfs:label "НЕК «Укренерго»"@uk .
+
+:Dispatcher_Duty_Shift rdf:type owl:NamedIndividual , :ControlCenterDispatcher ;
+    :hasAssetIdentifier "UA-ACTOR-DISP-CENTRAL" ;
+    :operates :FCR_Primary_Frequency_Response ;
+    :monitors :Frequency_Drop_Event_50Hz ;
+    rdfs:label "Черговий диспетчер ЦДП"@uk .
+
+### Events & Disturbances
+:ShortCircuit_Fault_Line750 rdf:type owl:NamedIndividual , :ShortCircuitFault ;
+    :hasAssetIdentifier "EVT-2026-FAULT-SC-01" ;
+    :hasFaultCurrentKA "24.5"^^xsd:double ;
+    :causes :Line_Overload_Vinnytska_330kV ;
+    :triggers :RelayProtection_Trip_Line750 ;
+    rdfs:label "Коротке замикання на ПЛ 750 кВ"@uk .
+
+:Line_Overload_Vinnytska_330kV rdf:type owl:NamedIndividual , :LineOverload ;
+    :hasAssetIdentifier "EVT-2026-OVLD-330" ;
+    :triggers :Redispatch_Contingency_Process ;
+    rdfs:label "Перевантаження суміжної ПЛ 330 кВ"@uk .
+
+:Frequency_Drop_Event_50Hz rdf:type owl:NamedIndividual , :FrequencyDeviation ;
+    :hasAssetIdentifier "EVT-2026-FREQ-DROP" ;
+    :hasGridFrequencyHz "49.88"^^xsd:double ;
+    :triggers :FCR_Primary_Frequency_Response ;
+    rdfs:label "Спад частоти до 49.88 Гц"@uk .
+
+:Insulation_Defect_AT1 rdf:type owl:NamedIndividual , :InsulationDegradation ;
+    :hasAssetIdentifier "EVT-2026-DEFECT-DGA-AT1" ;
+    :triggers :DGA_Oil_Diagnostic_AT1 ;
+    rdfs:label "Деструкція діелектрика в баку АТ-1"@uk .
+
+### Processes
+:RelayProtection_Trip_Line750 rdf:type owl:NamedIndividual , :RelayProtectionAction ;
+    :hasAssetIdentifier "PROC-PROT-TRIP-750" ;
+    :hasTripTimeMS 65 ;
+    :protects :OverheadLine_Zakhidna_Vinnytska_750kV ;
+    rdfs:label "Спрацювання захисту ПЛ 750 кВ"@uk .
+
+:Redispatch_Contingency_Process rdf:type owl:NamedIndividual , :RedispatchProcess ;
+    :hasAssetIdentifier "PROC-REDISP-N1-OPT" ;
+    :regulates :KhmelnytskyiNPP_Unit1 ;
+    rdfs:label "Протиаварійна передиспатчеризація N-1"@uk .
+
+:FCR_Primary_Frequency_Response rdf:type owl:NamedIndividual , :PrimaryFrequencyControl ;
+    :hasAssetIdentifier "PROC-BAL-FCR-01" ;
+    :activates :Dniester_PSPS_Unit ;
+    :regulates :Frequency_Drop_Event_50Hz ;
+    rdfs:label "Активація первинного регулювання FCR"@uk .
+
+:DGA_Oil_Diagnostic_AT1 rdf:type owl:NamedIndividual , :DissolvedGasAnalysis ;
+    :hasAssetIdentifier "PROC-DIAG-DGA-AT1" ;
+    :hasHydrogenConcentrationPPM "145.0"^^xsd:double ;
+    :hasAcetyleneConcentrationPPM "12.4"^^xsd:double ;
+    :protects :Autotransformer_AT1_Zakhidna ;
+    :monitors :Insulation_Defect_AT1 ;
+    rdfs:label "Аналіз масла АТ-1"@uk .
+
+
+### Additional Grid Assets (Enrichment for Lab 08)
+:Kyivska_Substation_750kV rdf:type owl:NamedIndividual , :Substation ;
+    :hasAssetIdentifier "UA-SUBST-KYIV-750" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasOperatingStatus "ENERGIZED_OPERATIONAL" ;
+    :connectedTo :OverheadLine_Vinnytska_Kyivska_750kV ;
+    :hasPart :Transformer_T1_Kyivska ;
+    rdfs:label "ПС 750 кВ «Київська»"@uk .
+
+:OverheadLine_Vinnytska_Kyivska_750kV rdf:type owl:NamedIndividual , :OverheadLine ;
+    :hasAssetIdentifier "UA-OHL-750-VK" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_TRANSMITTING" ;
+    :connectedTo :Substation_Vinnytska_750kV , :Kyivska_Substation_750kV ;
+    rdfs:label "ПЛ 750 кВ Вінницька — Київська"@uk .
+
+:Transformer_T1_Kyivska rdf:type owl:NamedIndividual , :PowerTransformer ;
+    :hasAssetIdentifier "UA-TR-T1-KYIV" ;
+    :hasVoltageLevelKV "750.0"^^xsd:double ;
+    :hasRatedActivePowerMW "1000.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_LOADED" ;
+    :partOf :Kyivska_Substation_750kV ;
+    rdfs:label "Автотрансформатор АТ-1 ПС Київська 750/330 кВ"@uk .
+
+:Dnipro_HPP_Unit1 rdf:type owl:NamedIndividual , :HydroPowerPlant ;
+    :hasAssetIdentifier "UA-GEN-HPP-DNIPRO" ;
+    :hasRatedActivePowerMW "75.0"^^xsd:double ;
+    :hasVoltageLevelKV "330.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_LOAD_FOLLOWING" ;
+    :suppliesPowerTo :Substation_Vinnytska_750kV ;
+    rdfs:label "Дніпровська ГЕС, Гідроагрегат №1"@uk .
+
+:Trypilska_ThermalPowerPlant rdf:type owl:NamedIndividual , :ThermalPowerPlant ;
+    :hasAssetIdentifier "UA-GEN-TPP-TRYP" ;
+    :hasRatedActivePowerMW "600.0"^^xsd:double ;
+    :hasVoltageLevelKV "330.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_DISPATCHABLE" ;
+    :suppliesPowerTo :Kyivska_Substation_750kV ;
+    rdfs:label "Трипільська ТЕС"@uk .
+
+:Kyiv_Residential_Consumer rdf:type owl:NamedIndividual , :ResidentialConsumer ;
+    :hasAssetIdentifier "UA-LOAD-KYIV-RES" ;
+    :hasRatedActivePowerMW "250.0"^^xsd:double ;
+    :hasVoltageLevelKV "110.0"^^xsd:double ;
+    :hasOperatingStatus "LOAD_ACTIVE_BASE" ;
+    rdfs:label "Київський побутовий споживач"@uk .
+
+:Kakhovka_Solar_SES rdf:type owl:NamedIndividual , :SolarPowerPlant ;
+    :hasAssetIdentifier "UA-GEN-SES-KAKH" ;
+    :hasRatedActivePowerMW "120.0"^^xsd:double ;
+    :hasVoltageLevelKV "150.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_VARIABLE" ;
+    :suppliesPowerTo :Substation_Vinnytska_750kV ;
+    rdfs:label "Каховська СЕС"@uk .
+
+:Zaporizhia_Wind_WPP rdf:type owl:NamedIndividual , :WindPowerPlant ;
+    :hasAssetIdentifier "UA-GEN-WPP-ZAP" ;
+    :hasRatedActivePowerMW "98.0"^^xsd:double ;
+    :hasVoltageLevelKV "150.0"^^xsd:double ;
+    :hasOperatingStatus "IN_SERVICE_VARIABLE" ;
+    :suppliesPowerTo :Substation_Vinnytska_750kV ;
+    rdfs:label "Запорізька ВЕС"@uk .

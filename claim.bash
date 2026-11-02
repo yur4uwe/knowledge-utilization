@@ -312,7 +312,7 @@ case "$action" in
 
         biggest_id=$(grep -Eo "^$project_name-[0-9]+" $active_project | sort -V | tail -1)
         clean_id="${biggest_id##*-}"
-        next_idx=$((clean_id + 1))
+        next_idx=$((10#clean_id + 1))
         record[id]=$(printf "%s-%02d" "$project_name" "$next_idx")
 
         format_csv record >> "$active_project"

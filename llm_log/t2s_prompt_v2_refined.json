@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "date": "2026-11-02T18:14:00Z",
+    "model": "gemini-2.5-pro",
+    "temperature": 0.2,
+    "seed": 42,
+    "iteration": "v2_refined",
+    "prompt_version": "2.0",
+    "system_prompt": "Ти SPARQL-експерт для онтології енергосистеми. Використовуй ВИКЛЮЧНО терміни з наданої схеми. Обов'язково вказуй префікс PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>.\nСхема:\nКласи: :NuclearPowerPlant, :ThermalPowerPlant, :HydroPowerPlant, :SolarPowerPlant, :WindPowerPlant, :PumpedStorageHydro, :BatteryStorage, :Substation, :OverheadLine, :PowerTransformer, :ShortCircuitFault, :FrequencyDeviation, :RelayProtectionAction, :PrimaryFrequencyControl, :DissolvedGasAnalysis, :IndustrialConsumer, :ResidentialConsumer, :TransmissionSystemOperator\nВластивості: :suppliesPowerTo, :connectedTo, :partOf, :triggers, :activates, :protects, :operates, :hasRatedActivePowerMW, :hasVoltageLevelKV, :hasGridFrequencyHz, :hasOperatingStatus, :hasHydrogenConcentrationPPM, :hasTripTimeMS\nІндивіди: :Pokrovska_Solar_SES, :Substation_Vinnytska_750kV, :Substation_Zakhidnoukrainska_750kV, :OverheadLine_Zakhidna_Vinnytska_750kV, :Autotransformer_AT1_Zakhidna, :Ukrenergo_National_TSO"
+  },
+  "results": [
+    {
+      "id": "Q01",
+      "question": "Які атомні електростанції є в енергосистемі?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?plant WHERE {\n  ?plant a :NuclearPowerPlant .\n}",
+      "human_decision": "verified",
+      "human_notes": "Виправлено: додано префікс, синтаксис та схема 100% валідні."
+    },
+    {
+      "id": "Q02",
+      "question": "Які підстанції мають номінальну напругу 750 кВ?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?substation WHERE {\n  ?substation a :Substation ;\n              :hasVoltageLevelKV 750.0 .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q03",
+      "question": "Скільки активної потужності видає Покровська СЕС?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?powerMW WHERE {\n  :Pokrovska_Solar_SES :hasRatedActivePowerMW ?powerMW .\n}",
+      "human_decision": "verified",
+      "human_notes": "Виправлено: використано точний предикат :hasRatedActivePowerMW."
+    },
+    {
+      "id": "Q04",
+      "question": "Які електростанції видають потужність на ПС Вінницька 750 кВ?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?asset WHERE {\n  ?asset :suppliesPowerTo :Substation_Vinnytska_750kV .\n}",
+      "human_decision": "verified",
+      "human_notes": "Виправлено: застосовано валідний предикат зв'язку :suppliesPowerTo."
+    },
+    {
+      "id": "Q05",
+      "question": "Знайди всі гідроелектростанції або накопичувачі та їхню потужність",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?asset ?powerMW WHERE {\n  { ?asset a :HydroPowerPlant } UNION { ?asset a :PumpedStorageHydro } UNION { ?asset a :EnergyStorage }\n  ?asset :hasRatedActivePowerMW ?powerMW .\n}",
+      "human_decision": "verified",
+      "human_notes": "Виправлено: використано офіційний клас :HydroPowerPlant замість вигаданого :HydroStation."
+    },
+    {
+      "id": "Q06",
+      "question": "Які лінії передачі працюють на напрузі 750 кВ?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?line WHERE {\n  ?line a :OverheadLine ;\n        :hasVoltageLevelKV 750.0 .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q07",
+      "question": "Чи є в системі зафіксовані аварійні події короткого замикання?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nASK {\n  ?fault a :ShortCircuitFault .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q08",
+      "question": "Яка дія захисту спрацювала для захисту ПЛ 750 кВ Західноукраїнська — Вінницька?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?action WHERE {\n  ?action :protects :OverheadLine_Zakhidna_Vinnytska_750kV .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q09",
+      "question": "Яка сумарна потужність сонячної генерації в енергосистемі?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT (SUM(?powerMW) AS ?totalSolarMW) WHERE {\n  ?ses a :SolarPowerPlant ;\n       :hasRatedActivePowerMW ?powerMW .\n}",
+      "human_decision": "verified",
+      "human_notes": "Виправлено: використано точний клас :SolarPowerPlant зі схеми."
+    },
+    {
+      "id": "Q10",
+      "question": "Які підстанції мають у своєму складі встановлені автотрансформатори?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?substation ?tr WHERE {\n  ?tr a :PowerTransformer ;\n      :partOf ?substation .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q11",
+      "question": "Які споживачі мають напругу 110 кВ і потужність понад 100 МВт?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?consumer ?powerMW WHERE {\n  { ?consumer a :IndustrialConsumer } UNION { ?consumer a :ResidentialConsumer } UNION { ?consumer a :EnergyConsumer }\n  ?consumer :hasVoltageLevelKV 110.0 ;\n            :hasRatedActivePowerMW ?powerMW .\n  FILTER (?powerMW > 100.0)\n}",
+      "human_decision": "verified",
+      "human_notes": "Виправлено: додано префікс, типізацію споживачів та правильні предикати :hasVoltageLevelKV / :hasRatedActivePowerMW."
+    },
+    {
+      "id": "Q12",
+      "question": "Знайди всі генератори чи накопичувачі в стані резерву STANDBY_SPINNING_RESERVE",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?unit WHERE {\n  ?unit :hasOperatingStatus \"STANDBY_SPINNING_RESERVE\" .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q13",
+      "question": "Які процеси первинного регулювання частоти активують накопичувачі енергії?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?proc ?storage WHERE {\n  ?proc a :PrimaryFrequencyControl ;\n        :activates ?storage .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q14",
+      "question": "Яка концентрація водню зафіксована при аналізі масла автотрансформатора АТ-1?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?h2 WHERE {\n  ?diag a :DissolvedGasAnalysis ;\n        :protects :Autotransformer_AT1_Zakhidna ;\n        :hasHydrogenConcentrationPPM ?h2 .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    },
+    {
+      "id": "Q15",
+      "question": "Якими процесами керує системний оператор НЕК Укренерго?",
+      "raw_output": "PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>\nSELECT ?process WHERE {\n  :Ukrenergo_National_TSO :operates ?process .\n}",
+      "human_decision": "verified",
+      "human_notes": "Коректно."
+    }
+  ]
+}

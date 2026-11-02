@@ -1,0 +1,19 @@
+# KQ3: Побудова графа аварійних інцидентів та спрацювання захисту
+# Конструкції: CONSTRUCT
+PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+    ?fault :incidentAffectsAsset ?protectedAsset ;
+           :recordedFaultCurrentKA ?faultCurrent ;
+           :clearedByAction ?action ;
+           :protectionTripTimeMS ?tripTime .
+}
+WHERE {
+    ?fault a :ShortCircuitFault ;
+           :hasFaultCurrentKA ?faultCurrent ;
+           :triggers ?action .
+    ?action a :RelayProtectionAction ;
+            :protects ?protectedAsset ;
+            :hasTripTimeMS ?tripTime .
+}

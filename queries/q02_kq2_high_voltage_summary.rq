@@ -1,0 +1,12 @@
+# KQ2: Статистичний аналіз потужності обладнання за класами напруги
+# Конструкції: SELECT, GROUP BY, COUNT, SUM, AVG, HAVING
+PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
+
+SELECT ?voltageKV (COUNT(?asset) AS ?unitCount) (SUM(?powerMW) AS ?totalPowerMW) (AVG(?powerMW) AS ?avgPowerMW)
+WHERE {
+    ?asset :hasVoltageLevelKV ?voltageKV .
+    ?asset :hasRatedActivePowerMW ?powerMW .
+}
+GROUP BY ?voltageKV
+HAVING (COUNT(?asset) >= 1)
+ORDER BY DESC(?voltageKV)

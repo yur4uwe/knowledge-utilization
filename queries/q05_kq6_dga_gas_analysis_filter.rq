@@ -1,0 +1,15 @@
+# KQ6: Виявлення дефектних трансформаторів за результатами хроматографічного аналізу газів (ДАРГ)
+# Конструкції: SELECT, FILTER
+PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?transformer ?label ?h2Ppm ?c2h2Ppm ?status
+WHERE {
+    ?diag a :DissolvedGasAnalysis ;
+          :protects ?transformer ;
+          :hasHydrogenConcentrationPPM ?h2Ppm ;
+          :hasAcetyleneConcentrationPPM ?c2h2Ppm .
+    ?transformer rdfs:label ?label ;
+                 :hasOperatingStatus ?status .
+    FILTER (?h2Ppm > 100.0 || ?c2h2Ppm > 5.0)
+}

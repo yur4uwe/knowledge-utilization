@@ -1,0 +1,116 @@
+# SHACL Shapes for Energy System Domain
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://www.semanticweb.org/ontologies/2026/energy-system#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape 1: Перевірка генеруючих одиниць (GenerationUnit)
+# Обмеження: minCount, datatype, minExclusive, class
+:GeneratingUnitShape
+    a sh:NodeShape ;
+    sh:targetClass :GenerationUnit ;
+    sh:property [
+        sh:path :hasRatedActivePowerMW ;
+        sh:name "Потужність генерації" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minExclusive 0.0 ;
+        sh:message "Генеруюча одиниця повинна мати додатну номінальну потужність (> 0 МВт)." ;
+    ] ;
+    sh:property [
+        sh:path :suppliesPowerTo ;
+        sh:name "Підключення до підстанції" ;
+        sh:minCount 1 ;
+        sh:class :Substation ;
+        sh:message "Генеруюча одиниця повинна видавати потужність на валідну підстанцію (:Substation)." ;
+    ] .
+
+# Shape 2: Перевірка підстанцій (Substation)
+# Обмеження: minCount, datatype, minInclusive, maxInclusive, pattern
+:SubstationShape
+    a sh:NodeShape ;
+    sh:targetClass :Substation ;
+    sh:property [
+        sh:path :hasVoltageLevelKV ;
+        sh:name "Клас напруги підстанції" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 35.0 ;
+        sh:maxInclusive 1150.0 ;
+        sh:message "Клас напруги підстанції повинен бути в діапазоні від 35 до 1150 кВ." ;
+    ] ;
+    sh:property [
+        sh:path :hasAssetIdentifier ;
+        sh:name "CIM ідентифікатор підстанції" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^UA-SUBST-[A-Z0-9]+-[0-9]+$" ;
+        sh:message "Ідентифікатор підстанції повинен відповідати формату UA-SUBST-<NAME>-<VOLTAGE>." ;
+    ] .
+
+# Shape 3: Перевірка силових трансформаторів (PowerTransformer)
+# Обмеження: minCount, class, datatype
+:PowerTransformerShape
+    a sh:NodeShape ;
+    sh:targetClass :PowerTransformer ;
+    sh:property [
+        sh:path :partOf ;
+        sh:name "Приналежність до вузла" ;
+        sh:minCount 1 ;
+        sh:class :Substation ;
+        sh:message "Силовий трансформатор обов'язково повинен бути частиною конкретної підстанції (:Substation)." ;
+    ] ;
+    sh:property [
+        sh:path :hasVoltageLevelKV ;
+        sh:minCount 1 ;
+        sh:datatype xsd:double ;
+        sh:message "Трансформатор повинен мати вказаний клас напруги." ;
+    ] .
+
+# Shape 4: Перевірка дій релейного захисту (RelayProtectionAction)
+# Обмеження: minCount, datatype, minInclusive, maxInclusive, class
+:RelayProtectionShape
+    a sh:NodeShape ;
+    sh:targetClass :RelayProtectionAction ;
+    sh:property [
+        sh:path :hasTripTimeMS ;
+        sh:name "Час спрацювання захисту" ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 10 ;
+        sh:maxInclusive 5000 ;
+        sh:message "Час спрацювання релейного захисту повинен бути в межах від 10 до 5000 мс." ;
+    ] ;
+    sh:property [
+        sh:path :protects ;
+        sh:name "Захищений об'єкт" ;
+        sh:minCount 1 ;
+        sh:class :NetworkInfra ;
+        sh:message "Релейний захист повинен захищати об'єкт мережевої інфраструктури (:NetworkInfra)." ;
+    ] .
+
+# Shape 5: Перевірка хроматографічного аналізу газів (DissolvedGasAnalysis)
+# Обмеження: minCount, datatype, minInclusive, class
+:DGAAnalysisShape
+    a sh:NodeShape ;
+    sh:targetClass :DissolvedGasAnalysis ;
+    sh:property [
+        sh:path :hasHydrogenConcentrationPPM ;
+        sh:minCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0.0 ;
+        sh:message "Концентрація водню повинна бути невід'ємним числом." ;
+    ] ;
+    sh:property [
+        sh:path :hasAcetyleneConcentrationPPM ;
+        sh:minCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0.0 ;
+        sh:message "Концентрація ацетилену повинна бути невід'ємним числом." ;
+    ] ;
+    sh:property [
+        sh:path :protects ;
+        sh:minCount 1 ;
+        sh:class :PowerTransformer ;
+        sh:message "Аналіз DGA повинен бути прив'язаний до силового трансформатора." ;
+    ] .
