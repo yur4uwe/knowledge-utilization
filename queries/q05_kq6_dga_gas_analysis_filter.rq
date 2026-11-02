@@ -1,5 +1,4 @@
 # KQ6: Виявлення дефектних трансформаторів за результатами хроматографічного аналізу газів (ДАРГ)
-# Конструкції: SELECT, FILTER
 PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 

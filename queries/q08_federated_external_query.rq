@@ -1,5 +1,4 @@
 # Запит 8: Федеративний SPARQL-запит до зовнішньої бази знань DBpedia
-# Конструкції: SELECT, VALUES, SERVICE, OPTIONAL, FILTER
 PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dbo: <http://dbpedia.org/ontology/>

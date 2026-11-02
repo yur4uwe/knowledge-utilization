@@ -1,5 +1,4 @@
 # KQ8: Пошук потужних генеруючих одиниць для передиспатчеризації (Неоптимізований варіант)
-# Особливість: декартовий перетин (?gen ?p1 ?o1) x (?substation ?p2 ?o2) та пізній фільтр через REGEX
 PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 

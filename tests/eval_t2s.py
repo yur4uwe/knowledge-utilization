@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Text-to-SPARQL Evaluation Pipeline
 Pipeline stages:
@@ -11,9 +10,9 @@ Pipeline stages:
 
 import json
 import re
-import sys
-import requests
+
 import rdflib
+import requests
 from rdflib.plugins.sparql.parser import parseQuery
 
 FUSEKI_ENDPOINT = "http://localhost:3030/energy/sparql"
@@ -21,6 +20,7 @@ KB_FILE = "data/kb.ttl"
 T2S_GOLD_FILE = "tests/t2s.jsonl"
 LOG_V1 = "llm_log/t2s_prompt_v1_baseline.json"
 LOG_V2 = "llm_log/t2s_prompt_v2_refined.json"
+
 
 def extract_schema_vocabulary(ttl_path: str):
     g = rdflib.Graph()
@@ -30,9 +30,10 @@ def extract_schema_vocabulary(ttl_path: str):
     for s, p, o in g:
         for term in (s, p, o):
             if isinstance(term, rdflib.URIRef) and str(term).startswith(base_ns):
-                local_name = str(term)[len(base_ns):]
+                local_name = str(term)[len(base_ns) :]
                 vocab.add(local_name)
     return vocab
+
 
 def check_syntax(query_str: str) -> bool:
     try:
@@ -41,19 +42,24 @@ def check_syntax(query_str: str) -> bool:
     except Exception:
         return False
 
+
 def check_schema_adherence(query_str: str, allowed_vocab: set) -> bool:
     # Find all tokens prefixed with ':' (e.g. :Substation, :hasRatedActivePowerMW)
     # Exclude standard prefixes like rdf:type or xsd:double
-    tokens = re.findall(r'(?<![a-zA-Z0-9_]):([a-zA-Z0-9_]+)', query_str)
+    tokens = re.findall(r"(?<![a-zA-Z0-9_]):([a-zA-Z0-9_]+)", query_str)
     for tok in tokens:
         if tok not in allowed_vocab:
             return False
     return True
 
+
 def ensure_limit(query_str: str, limit_val: int = 50) -> str:
-    if re.search(r'\bLIMIT\b', query_str, re.IGNORECASE) or re.search(r'\bASK\b', query_str, re.IGNORECASE):
+    if re.search(r"\bLIMIT\b", query_str, re.IGNORECASE) or re.search(
+        r"\bASK\b", query_str, re.IGNORECASE
+    ):
         return query_str
     return query_str.rstrip() + f"\nLIMIT {limit_val}\n"
+
 
 def execute_sparql(query_str: str, endpoint: str):
     query_with_limit = ensure_limit(query_str)
@@ -62,7 +68,7 @@ def execute_sparql(query_str: str, endpoint: str):
             endpoint,
             data={"query": query_with_limit},
             headers={"Accept": "application/sparql-results+json"},
-            timeout=5
+            timeout=5,
         )
         if resp.status_code != 200:
             return False, None
@@ -76,8 +82,9 @@ def execute_sparql(query_str: str, endpoint: str):
             row = {k: v.get("value") for k, v in b.items()}
             normalized.append(tuple(sorted(row.items())))
         return True, set(normalized)
-    except Exception as e:
+    except Exception:
         return False, None
+
 
 def evaluate_run(run_data, gold_data, allowed_vocab, endpoint):
     gold_map = {item["id"]: item for item in gold_data}
@@ -111,14 +118,16 @@ def evaluate_run(run_data, gold_data, allowed_vocab, endpoint):
                 is_exec = True
                 exec_ok += 1
 
-        detailed_results.append({
-            "id": qid,
-            "question": item["question"],
-            "syntax": is_syn,
-            "schema": is_sch,
-            "exec": is_exec,
-            "raw_output": raw_sparql
-        })
+        detailed_results.append(
+            {
+                "id": qid,
+                "question": item["question"],
+                "syntax": is_syn,
+                "schema": is_sch,
+                "exec": is_exec,
+                "raw_output": raw_sparql,
+            }
+        )
 
     metrics = {
         "total": total,
@@ -128,11 +137,12 @@ def evaluate_run(run_data, gold_data, allowed_vocab, endpoint):
         "syntax_count": syntax_ok,
         "schema_count": schema_ok,
         "execution_count": exec_ok,
-        "details": detailed_results
+        "details": detailed_results,
     }
     return metrics
 
-def main():
+
+if __name__ == "__main__":
     allowed_vocab = extract_schema_vocabulary(KB_FILE)
     print(f"Loaded schema vocabulary: {len(allowed_vocab)} unique local terms.")
 
@@ -150,15 +160,24 @@ def main():
 
     print("\n--- Running Evaluation: V1 Baseline ---")
     m1 = evaluate_run(v1_data, gold_data, allowed_vocab, FUSEKI_ENDPOINT)
-    print(f"Syntax Correctness:  {m1['syntax_count']}/{m1['total']} ({m1['syntax_accuracy']:.1f}%)")
-    print(f"Schema Adherence:    {m1['schema_count']}/{m1['total']} ({m1['schema_accuracy']:.1f}%)")
-    print(f"Execution Accuracy:  {m1['execution_count']}/{m1['total']} ({m1['execution_accuracy']:.1f}%)")
+    print(
+        f"Syntax Correctness:  {m1['syntax_count']}/{m1['total']} ({m1['syntax_accuracy']:.1f}%)"
+    )
+    print(
+        f"Schema Adherence:    {m1['schema_count']}/{m1['total']} ({m1['schema_accuracy']:.1f}%)"
+    )
+    print(
+        f"Execution Accuracy:  {m1['execution_count']}/{m1['total']} ({m1['execution_accuracy']:.1f}%)"
+    )
 
     print("\n--- Running Evaluation: V2 Refined Prompt ---")
     m2 = evaluate_run(v2_data, gold_data, allowed_vocab, FUSEKI_ENDPOINT)
-    print(f"Syntax Correctness:  {m2['syntax_count']}/{m2['total']} ({m2['syntax_accuracy']:.1f}%)")
-    print(f"Schema Adherence:    {m2['schema_count']}/{m2['total']} ({m2['schema_accuracy']:.1f}%)")
-    print(f"Execution Accuracy:  {m2['execution_count']}/{m2['total']} ({m2['execution_accuracy']:.1f}%)")
-
-if __name__ == "__main__":
-    main()
+    print(
+        f"Syntax Correctness:  {m2['syntax_count']}/{m2['total']} ({m2['syntax_accuracy']:.1f}%)"
+    )
+    print(
+        f"Schema Adherence:    {m2['schema_count']}/{m2['total']} ({m2['schema_accuracy']:.1f}%)"
+    )
+    print(
+        f"Execution Accuracy:  {m2['execution_count']}/{m2['total']} ({m2['execution_accuracy']:.1f}%)"
+    )

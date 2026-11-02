@@ -1,5 +1,4 @@
 # KQ1: Які електростанції та накопичувачі підключені до підстанції і скільки МВт видають?
-# Конструкції: SELECT, OPTIONAL, ORDER BY
 PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 

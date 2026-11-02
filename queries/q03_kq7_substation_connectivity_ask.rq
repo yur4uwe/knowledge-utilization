@@ -1,5 +1,4 @@
 # KQ7: Перевірка наявності транзитного зв'язку між підстанціями Західноукраїнська та Київська
-# Конструкції: ASK, Property Path ((:connectedTo|^:connectedTo)+)
 PREFIX : <http://www.semanticweb.org/ontologies/2026/energy-system#>
 
 ASK {
