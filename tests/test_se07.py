@@ -99,4 +99,4 @@ def test_pipeline_execution():
     assert "seeded_catalog" in res
     assert len(res["seeded_catalog"]) >= 5
     assert "mermaid_chart" in res
-    assert "flowchart LR" in res["mermaid_chart"]
+    assert "flowchart TD" in res["mermaid_chart"]

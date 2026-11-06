@@ -22,31 +22,21 @@ def generate_mermaid_situation_diagram() -> str:
     """Generate Mermaid state-event diagram illustrating Situation 1 and Situation 2."""
     return """```mermaid
 caption: Шаблони динамічних ситуацій енергосистеми (Стан -> Подія -> Умова -> Новий стан -> Дія)
-options: { width=90% }
-flowchart LR
+options: { width=100% }
+flowchart TD
     subgraph S1["Ситуація 1: КЗ на ПЛ 750 кВ"]
-        direction TB
-        State1["NormalOperationState\\n(Номінальний режим)"]
-        Evt1["ShortCircuitFault\\n(КЗ 24.5 кА)"]
-        Cond1{"hasFaultCurrentKA > 20"}
-        NewState1["EmergencyState\\n(Аварійний режим)"]
-        Act1["RelayProtectionAction\\n(Відсічка вимикача 65 мс)"]
-
-        State1 --> Evt1 --> Cond1
-        Cond1 -- Так --> NewState1 --> Act1
+        direction LR
+        State1["NormalOperationState\\n(Нормальний стан)"] --> Evt1["ShortCircuitFault\\n(КЗ 24.5 кА)"] --> Cond1{"hasFaultCurrentKA > 20"}
+        Cond1 -- Так --> NewState1["EmergencyState\\n(Аварійний стан)"] --> Act1["RelayProtectionAction\\n(Відсічка вимикача)"]
     end
 
     subgraph S2["Ситуація 2: Дефіцит генерації"]
-        direction TB
-        State2["NormalOperationState\\n(f = 50.00 Гц)"]
-        Evt2["FrequencyDeviation\\n(Втрата 1000 МВт)"]
-        Cond2{"hasGridFrequencyHz < 49.80"}
-        NewState2["AlertState\\n(Тривожний режим)"]
-        Act2["PrimaryFrequencyControl\\n(Пуск ГАЕС FCR 2-15 с)"]
-
-        State2 --> Evt2 --> Cond2
-        Cond2 -- Так --> NewState2 --> Act2
+        direction LR
+        State2["NormalOperationState\\n(Частота 50.0 Гц)"] --> Evt2["FrequencyDeviation\\n(Втрата генерації)"] --> Cond2{"hasGridFrequencyHz < 49.80"}
+        Cond2 -- Так --> NewState2["AlertState\\n(Тривожний режим)"] --> Act2["PrimaryFrequencyControl\\n(Пуск резерву ГАЕС)"]
     end
+
+    S1 ~~~ S2
 ```"""
 
 
