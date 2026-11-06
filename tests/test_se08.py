@@ -50,15 +50,22 @@ def test_c1_query_count_and_diversity():
     assert has_service_label, "C1: Missing SERVICE wikibase:label construct"
 
 
-def test_c1_sparql_syntax_validity():
-    """Verify all 8 domain queries are 100% syntactically valid SPARQL 1.1."""
+def test_c1_sparql_files_exist_and_valid():
+    """Verify all individual .sparql query files exist on disk and are syntactically valid SPARQL 1.1."""
+    queries_dir = Path(__file__).resolve().parent.parent / "src" / "se08" / "queries"
+    assert queries_dir.exists(), "src/se08/queries/ must exist"
+
     for qid, qdata in QUERIES.items():
-        sparql = qdata["sparql"]
+        sparql_file = queries_dir / qdata["file"]
+        assert sparql_file.exists(), f"Query file {sparql_file} does not exist"
+        content = sparql_file.read_text(encoding="utf-8").strip()
+        assert len(content) > 10, f"Query file {sparql_file} is empty"
+
         try:
-            parsed = parseQuery(sparql)
-            assert parsed is not None, f"Query {qid} returned empty parse tree"
+            parsed = parseQuery(content)
+            assert parsed is not None
         except Exception as e:
-            pytest.fail(f"SPARQL syntax error in query {qid}: {e}")
+            pytest.fail(f"Syntax error in {qdata['file']}: {e}")
 
 
 def test_c2_results_and_interpretation_presence():
@@ -72,7 +79,7 @@ def test_c2_results_and_interpretation_presence():
         assert qid in queries_results, f"Missing execution results for {qid}"
         res = queries_results[qid]
         assert res.get("status") == "success", f"Query {qid} was not marked as successful"
-        if "boolean" in res:
+        if res.get("boolean") is not None:
             assert isinstance(res["boolean"], bool)
         else:
             assert "bindings" in res or "count" in res

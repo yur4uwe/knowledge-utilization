@@ -1,263 +1,131 @@
 """Domain queries for Self-Education 8: SPARQL queries to Wikidata.
 
+Loads standalone .sparql files from src/se08/queries/.
 Domain: Power System Management and Electric Infrastructure (IEC CIM aligned).
 """
 
+from pathlib import Path
+
+QUERIES_DIR = Path(__file__).resolve().parent / "queries"
+LLM_DIR = QUERIES_DIR / "llm"
+
+
+def read_query(filename: str) -> str:
+    """Read a SPARQL query file."""
+    path = QUERIES_DIR / filename
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read().strip()
+
+
+def read_llm_query(filename: str) -> str:
+    """Read an LLM SPARQL query file."""
+    path = LLM_DIR / filename
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read().strip()
+
+
 QUERIES = {
     "CQ1": {
-        "title": "Атомні електростанції України (потужність, координати)",
-        "cq": "Які атомні електростанції (АЕС) функціонують в Україні, яка їхня встановлена потужність та координати?",
+        "file": "cq01_npp.sparql",
+        "title": "Атомні електростанції України (потужність, координати, оператор)",
+        "cq": "Які атомні електростанції (АЕС) функціонують в Україні, яка їхня встановлена потужність (МВт), координати та оператор?",
         "constructs": ["SELECT", "SERVICE", "OPTIONAL", "ORDER BY", "Property Path"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?plant ?plantLabel ?capacity ?coords WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q134447 ;
-         wdt:P17 wd:Q212 .
-  OPTIONAL { ?plant wdt:P2100 ?capacity . }
-  OPTIONAL { ?plant wdt:P625 ?coords . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY DESC(?capacity)
-""",
+        "sparql": read_query("cq01_npp.sparql"),
     },
     "CQ2": {
+        "file": "cq02_pspp_ask.sparql",
         "title": "Наявність гідроакумулюючих станцій (ГАЕС) в Україні",
         "cq": "Чи є в базі знань Wikidata підтвердження наявності гідроакумулюючих електростанцій (ГАЕС) на території України?",
         "constructs": ["ASK", "Property Path"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-ASK {
-  ?plant wdt:P31/wdt:P279* wd:Q200297 ;
-         wdt:P17 wd:Q212 .
-}
-""",
+        "sparql": read_query("cq02_pspp_ask.sparql"),
     },
     "CQ3": {
-        "title": "Розподіл СЕС за областями України з фільтрацією",
-        "cq": "Яка кількість об'єктів сонячної генерації (СЕС) зареєстрована в розрізі регіонів України (з кількістю >= 2)?",
-        "constructs": ["SELECT", "COUNT", "GROUP BY", "HAVING", "SERVICE", "Property Path"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?region ?regionLabel (COUNT(?plant) AS ?solarPlantCount) WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q1002842 ;
-         wdt:P17 wd:Q212 ;
-         wdt:P131 ?region .
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-GROUP BY ?region ?regionLabel
-HAVING (COUNT(?plant) >= 2)
-ORDER BY DESC(?solarPlantCount)
-""",
+        "file": "cq03_nuclear_by_country.sparql",
+        "title": "Кількість ядерних станцій у країнах Європи з фільтрацією",
+        "cq": "Яка кількість ядерних електростанцій зафіксована в країнах Європи (для країн із >= 2 об'єктами)?",
+        "constructs": ["SELECT", "VALUES", "COUNT", "GROUP BY", "HAVING", "SERVICE", "Property Path"],
+        "sparql": read_query("cq03_nuclear_by_country.sparql"),
     },
     "CQ4": {
+        "file": "cq04_taxonomy_closure.sparql",
         "title": "Таксономічне замикання підкласів електростанцій",
         "cq": "Які підкласи концепту 'електростанція' (wd:Q159719) існують у глобальній онтології Wikidata за транзитивним шляхом?",
         "constructs": ["SELECT", "DISTINCT", "Property Path (+)", "SERVICE", "LIMIT"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT DISTINCT ?subClass ?subClassLabel WHERE {
-  ?subClass wdt:P279+ wd:Q159719 .
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY ?subClassLabel
-LIMIT 30
-""",
+        "sparql": read_query("cq04_taxonomy_closure.sparql"),
     },
     "CQ5": {
+        "file": "cq05_hydro_stats.sparql",
         "title": "Сумарна та середня потужність гідроелектростанцій України",
         "cq": "Яка сумарна та середня встановлена потужність (МВт) гідроелектростанцій в Україні за наявними числовими показниками?",
         "constructs": ["SELECT", "COUNT", "SUM", "AVG", "Property Path"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-SELECT (COUNT(?plant) AS ?plantCount) 
-       (SUM(?capacity) AS ?totalCapacityMW) 
-       (AVG(?capacity) AS ?avgCapacityMW) WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q159190 ;
-         wdt:P17 wd:Q212 ;
-         wdt:P2100 ?capacity .
-}
-""",
+        "sparql": read_query("cq05_hydro_stats.sparql"),
     },
     "CQ6": {
-        "title": "Топ-10 найпотужніших вітрових електростанцій світу",
-        "cq": "Які 10 найпотужніших вітроелектростанцій світу зафіксовані в базі із зазначенням країни, оператора та потужності?",
-        "constructs": ["SELECT", "FILTER", "OPTIONAL", "ORDER BY", "LIMIT", "SERVICE", "Property Path"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?plant ?plantLabel ?countryLabel ?operatorLabel ?capacity WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q29171 ;
-         wdt:P17 ?country ;
-         wdt:P2100 ?capacity .
-  OPTIONAL { ?plant wdt:P137 ?operator . }
-  FILTER (?capacity > 300)
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY DESC(?capacity)
-LIMIT 10
-""",
+        "file": "cq06_top_ukraine_power.sparql",
+        "title": "Топ найпотужніших електростанцій України",
+        "cq": "Які електростанції України мають встановлену потужність >= 2000 МВт із зазначенням типу генерації?",
+        "constructs": ["SELECT", "DISTINCT", "FILTER", "ORDER BY", "LIMIT", "SERVICE", "Property Path"],
+        "sparql": read_query("cq06_top_ukraine_power.sparql"),
     },
     "CQ7": {
-        "title": "Просторова ієрархія: електростанції Львівської області",
-        "cq": "Які електростанції розташовані на території Львівської області з урахуванням вкладеності районів та громад (wdt:P131*)?",
-        "constructs": ["SELECT", "DISTINCT", "Property Path (*)", "OPTIONAL", "SERVICE"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT DISTINCT ?plant ?plantLabel ?typeLabel ?capacity WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q159719 ;
-         wdt:P131* wd:Q1180 ;
-         wdt:P31 ?type .
-  OPTIONAL { ?plant wdt:P2100 ?capacity . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY ?plantLabel
-""",
+        "file": "cq07_dnipro_hydro_cascade.sparql",
+        "title": "Гідроелектростанції Дніпровського каскаду (річка Дніпро)",
+        "cq": "Які гідроелектростанції та гідроакумулюючі станції розташовані на річці Дніпро (wd:Q40855) в Україні?",
+        "constructs": ["SELECT", "OPTIONAL", "ORDER BY", "SERVICE", "Property Path"],
+        "sparql": read_query("cq07_dnipro_hydro_cascade.sparql"),
     },
     "CQ8": {
-        "title": "Оператори системи передачі (TSO) та дистрибуції електроенергії",
-        "cq": "Які суб'єкти виконують функції операторів системи передачі або розподілу електроенергії в Україні та суміжних країнах?",
-        "constructs": ["SELECT", "VALUES", "OPTIONAL", "SERVICE", "Property Path"],
-        "sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?company ?companyLabel ?countryLabel ?inception WHERE {
-  VALUES ?operatorType { wd:Q1572973 wd:Q1758788 }
-  VALUES ?country { wd:Q212 wd:Q36 wd:Q28 wd:Q218 wd:Q211 }
-  ?company wdt:P31/wdt:P279* ?operatorType ;
-           wdt:P17 ?country .
-  OPTIONAL { ?company wdt:P571 ?inception . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY ?countryLabel ?companyLabel
-""",
+        "file": "cq08_tso_operators.sparql",
+        "title": "Оператори систем передачі (TSO) в країнах Європи",
+        "cq": "Які системні оператори передачі електроенергії (TSO, wd:Q112046) діють в Україні та європейських державах?",
+        "constructs": ["SELECT", "VALUES", "OPTIONAL", "SERVICE"],
+        "sparql": read_query("cq08_tso_operators.sparql"),
     },
 }
 
 LLM_COMPARISONS = {
     "LLM_CASE_1": {
-        "title": "Запит АЕС України (галюцинація схеми DBpedia та IRI)",
+        "raw_file": "llm/case1_raw.sparql",
+        "fixed_file": "llm/case1_fixed.sparql",
+        "title": "Запит АЕС України (галюцинація схеми DBpedia та відсутність префіксів)",
         "cq": "CQ1: Які атомні електростанції діють в Україні та яка їх потужність?",
         "llm_prompt": "Напиши SPARQL-запит до Wikidata, щоб отримати всі діючі АЕС України та їхню встановлену потужність.",
-        "raw_llm_sparql": """SELECT ?plant ?capacity WHERE {
-  ?plant rdf:type dbo:NuclearPowerPlant .
-  ?plant dbo:location dbr:Ukraine .
-  ?plant dbo:capacity ?capacity .
-}""",
+        "raw_llm_sparql": read_llm_query("case1_raw.sparql"),
         "defect_type": "Змішування просторів імен (DBpedia замість Wikidata) та відсутність префіксів",
-        "defect_description": "Модель використала предикати та класи DBpedia (dbo:NuclearPowerPlant, dbo:location, dbo:capacity) у запиті до ендпойнта Wikidata, де сутності кодуються Q/P числовими ідентифікаторами (wd:Q134447, wdt:P17, wdt:P2100). Також відсутні директиви PREFIX, що викликає QueryParseError.",
-        "fixed_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?plant ?plantLabel ?capacity WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q134447 ;
-         wdt:P17 wd:Q212 .
-  OPTIONAL { ?plant wdt:P2100 ?capacity . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY DESC(?capacity)
-""",
+        "defect_description": "Модель використала предикати та класи DBpedia (dbo:NuclearPowerPlant, dbo:location, dbo:capacity) у запиті до ендпойнта Wikidata, де сутності кодуються Q/P числовими ідентифікаторами (wd:Q134447, wdt:P17, wdt:P2109). Також пропущено директиви PREFIX, що викликає QueryParseError.",
+        "fixed_sparql": read_llm_query("case1_fixed.sparql"),
     },
     "LLM_CASE_2": {
+        "raw_file": "llm/case2_raw.sparql",
+        "fixed_file": "llm/case2_fixed.sparql",
         "title": "Запит ГАЕС України (інверсія суб'єкта та об'єкта в ASK)",
         "cq": "CQ2: Чи є в Україні гідроакумулюючі електростанції?",
         "llm_prompt": "Напиши SPARQL ASK запит для Wikidata, щоб перевірити, чи є в Україні гідроакумулюючі електростанції.",
-        "raw_llm_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-ASK {
-  wd:Q212 wdt:P31 wd:Q200297 .
-}""",
+        "raw_llm_sparql": read_llm_query("case2_raw.sparql"),
         "defect_type": "Інверсія ролей суб'єкт-об'єкт (Subject-Object Inversion)",
-        "defect_description": "LLM згенерувала твердження 'wd:Q212 wdt:P31 wd:Q200297', що дослівно означає 'Україна є екземпляром гідроакумулюючої електростанції'. Запит семантично хибний і детерміновано повертає false. Необхідно шукати станцію (?plant), яка є екземпляром ГАЕС та розташована в Україні (wdt:P17 wd:Q212).",
-        "fixed_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-ASK {
-  ?plant wdt:P31/wdt:P279* wd:Q200297 ;
-         wdt:P17 wd:Q212 .
-}
-""",
+        "defect_description": "LLM згенерувала твердження 'wd:Q212 wdt:P31 wd:Q339353', що означає 'Україна є екземпляром гідроакумулюючої електростанції'. Запит семантично хибний і детерміновано повертає false. Необхідно шукати станцію (?plant), яка є екземпляром ГАЕС та розташована в Україні (wdt:P17 wd:Q212).",
+        "fixed_sparql": read_llm_query("case2_fixed.sparql"),
     },
     "LLM_CASE_3": {
-        "title": "Запит електростанцій Львівщини (втрата ієрархічної вкладеності wdt:P131*)",
-        "cq": "CQ7: Електростанції Львівської області",
-        "llm_prompt": "Напиши SPARQL-запит до Wikidata для вибірки всіх електростанцій у Львівській області.",
-        "raw_llm_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?plant ?plantLabel WHERE {
-  ?plant wdt:P31 wd:Q159719 ;
-         wdt:P131 wd:Q1180 .
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk". }
-}""",
-        "defect_type": "Пропуск транзитивного шляху вкладеності (Property Path Exclusion) та пряме P31",
-        "defect_description": "LLM використала прямий предикат 'wdt:P131 wd:Q1180'. У реальному графі Wikidata електростанції безпосередньо прив'язані до районів (Стрийський, Шептицький/Червоноградський) або територіальних громад, а не до самого вузла області. Також пряме 'wdt:P31 wd:Q159719' пропускає специфічні класи (ТЕС, СЕС, ВЕС), повертаючи порожній або майже порожній результат. Необхідно: 'wdt:P131* wd:Q1180' та 'wdt:P31/wdt:P279* wd:Q159719'.",
-        "fixed_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT DISTINCT ?plant ?plantLabel ?typeLabel ?capacity WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q159719 ;
-         wdt:P131* wd:Q1180 ;
-         wdt:P31 ?type .
-  OPTIONAL { ?plant wdt:P2100 ?capacity . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-ORDER BY ?plantLabel
-""",
+        "raw_file": "llm/case3_raw.sparql",
+        "fixed_file": "llm/case3_fixed.sparql",
+        "title": "Запит Дніпровського гідрокаскаду (хибний Q-код об'єкта та відсутність транзитивності)",
+        "cq": "CQ7: ГЕС Дніпровського каскаду на річці Дніпро",
+        "llm_prompt": "Напиши SPARQL-запит до Wikidata для вибірки гідроелектростанцій на річці Дніпро.",
+        "raw_llm_sparql": read_llm_query("case3_raw.sparql"),
+        "defect_type": "Галюцинація Q-коду сутності (Entity Linking Hallucination) та пропуск Property Path",
+        "defect_description": "LLM підставила Q-код wd:Q159190 замість wd:Q15911738 для ГЕС та wd:Q206 замість wd:Q40855 для річки Дніпро. Також статичне wdt:P31 без /wdt:P279* відкидає гідроакумулюючі станції каскаду. У результаті запит повертає 0 результатів. Виправлення встановлює точні ідентифікатори та транзитивний шлях.",
+        "fixed_sparql": read_llm_query("case3_fixed.sparql"),
     },
     "LLM_CASE_4": {
-        "title": "Агрегація СЕС за регіонами (відсутність сервісу міток у GROUP BY)",
-        "cq": "CQ3: Кількість сонячних станцій за областями України",
-        "llm_prompt": "Склади SPARQL-запит, який згрупує сонячні електростанції України за областями та порахує їх кількість.",
-        "raw_llm_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-SELECT ?region (COUNT(?plant) AS ?count) WHERE {
-  ?plant wdt:P31 wd:Q1002842 ;
-         wdt:P17 wd:Q212 ;
-         wdt:P131 ?region .
-}
-GROUP BY ?region""",
-        "defect_type": "Відсутність розгортання міток (Label Service) та пропуск підкласів СЕС",
-        "defect_description": "Запит повертає нечитабельні IRI замість назв областей і не має сортування чи фільтрації порожніх/поодиноких значень. Також 'wdt:P31 wd:Q1002842' без транзитивності '/wdt:P279*' відкидає дахові та концентраторні сонячні станції. Виправлення підключає SERVICE wikibase:label, групує за ?region ?regionLabel та додає HAVING.",
-        "fixed_sparql": """PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX wikibase: <http://wikiba.se/ontology#>
-PREFIX bd: <http://www.bigdata.com/rdf#>
-
-SELECT ?region ?regionLabel (COUNT(?plant) AS ?solarPlantCount) WHERE {
-  ?plant wdt:P31/wdt:P279* wd:Q1002842 ;
-         wdt:P17 wd:Q212 ;
-         wdt:P131 ?region .
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
-}
-GROUP BY ?region ?regionLabel
-HAVING (COUNT(?plant) >= 2)
-ORDER BY DESC(?solarPlantCount)
-""",
+        "raw_file": "llm/case4_raw.sparql",
+        "fixed_file": "llm/case4_fixed.sparql",
+        "title": "Агрегація АЕС за країнами (відсутність сервісу міток та групування за неагрегованими змінними)",
+        "cq": "CQ3: Кількість ядерних станцій за країнами Європи",
+        "llm_prompt": "Склади SPARQL-запит, який згрупує атомні електростанції за країнами та порахує їх кількість.",
+        "raw_llm_sparql": read_llm_query("case4_raw.sparql"),
+        "defect_type": "Відсутність розгортання міток (Label Service) та пропуск підкласів",
+        "defect_description": "Запит повертає сирі IRI без текстових назв країн. Також 'wdt:P31 wd:Q134447' без транзитивності '/wdt:P279*' відкидає дослідницькі та гібридні реакторні установки. Виправлення додає VALUES для фокусування, підключає SERVICE wikibase:label, групує за ?country ?countryLabel та додає HAVING.",
+        "fixed_sparql": read_llm_query("case4_fixed.sparql"),
     },
 }

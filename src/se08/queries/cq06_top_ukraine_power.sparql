@@ -1,0 +1,15 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT DISTINCT ?plant ?plantLabel ?typeLabel ?capacity WHERE {
+  ?plant wdt:P17 wd:Q212 ;
+         wdt:P31/wdt:P279* wd:Q159719 ;
+         wdt:P31 ?type ;
+         wdt:P2109 ?capacity .
+  FILTER (?capacity >= 2000)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "uk,en". }
+}
+ORDER BY DESC(?capacity)
+LIMIT 10
