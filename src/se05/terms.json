@@ -1,0 +1,514 @@
+[
+  {
+    "id": "TERM_01",
+    "name_uk": "Силовий автотрансформатор 750/330 кВ",
+    "name_en": "Power Autotransformer 750/330 kV",
+    "category_gold": "IEC61970::Wires::Transformer",
+    "definition": "Електромагнітний апарат високої напруги з гальванічно зв'язаними обмотками для перетворення напруги між магістральними класами.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "substation", "ac_transmission", "inductive"]
+  },
+  {
+    "id": "TERM_02",
+    "name_uk": "Триобмотковий силовий трансформатор 330/110/35 кВ",
+    "name_en": "Three-Winding Power Transformer 330/110/35 kV",
+    "category_gold": "IEC61970::Wires::Transformer",
+    "definition": "Трансформатор з трьома електрично розділеними обмотками для розподілу потужності на різні рівні напруги.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "substation", "transformation", "inductive"]
+  },
+  {
+    "id": "TERM_03",
+    "name_uk": "Трансформатор власних потреб підстанції",
+    "name_en": "Auxiliary Station Transformer",
+    "category_gold": "IEC61970::Wires::Transformer",
+    "definition": "Понижувальний трансформатор для живлення локального електрообладнання, вентиляції та РЗА підстанції.",
+    "attributes": ["asset", "physical_equipment", "medium_voltage", "substation", "auxiliary"]
+  },
+  {
+    "id": "TERM_04",
+    "name_uk": "Елегазовий вимикач 750 кВ",
+    "name_en": "SF6 Circuit Breaker 750 kV",
+    "category_gold": "IEC61970::Wires::SwitchingEquipment",
+    "definition": "Комутаційний апарат з елегазовим дугогасінням для вмикання та розриву робочих і короткозамкнених струмів у мережах 750 кВ.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "substation", "switching", "fault_clearing"]
+  },
+  {
+    "id": "TERM_05",
+    "name_uk": "Вакуумний вимикач 35 кВ",
+    "name_en": "Vacuum Circuit Breaker 35 kV",
+    "category_gold": "IEC61970::Wires::SwitchingEquipment",
+    "definition": "Комутаційний апарат з вакуумною камерою для перемикань у розподільних мережах середньої напруги.",
+    "attributes": ["asset", "physical_equipment", "medium_voltage", "substation", "switching"]
+  },
+  {
+    "id": "TERM_06",
+    "name_uk": "Горизонтально-поворотний роз'єднувач 330 кВ",
+    "name_en": "Air Disconnector 330 kV",
+    "category_gold": "IEC61970::Wires::SwitchingEquipment",
+    "definition": "Контактний комутаційний апарат для створення видимого розриву кола у знеструмленому стані.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "substation", "switching", "isolation"]
+  },
+  {
+    "id": "TERM_07",
+    "name_uk": "Швидкодіючий заземлювач",
+    "name_en": "Fast Earthing Switch",
+    "category_gold": "IEC61970::Wires::SwitchingEquipment",
+    "definition": "Механічний апарат для навмисного безпечного з'єднання струмовідних частин із землею при виведеному устаткуванні.",
+    "attributes": ["asset", "physical_equipment", "substation", "safety", "earthing"]
+  },
+  {
+    "id": "TERM_08",
+    "name_uk": "Магістральна повітряна лінія 750 кВ",
+    "name_en": "750 kV Overhead Transmission Line",
+    "category_gold": "IEC61970::Wires::ACLineSegment",
+    "definition": "Лінія електропередачі з розщепленою фазою на металевих опорах для передачі великих потоків потужності на далекі відстані.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "line", "transmission", "ac_transmission"]
+  },
+  {
+    "id": "TERM_09",
+    "name_uk": "Повітряна лінія передачі 330 кВ",
+    "name_en": "330 kV Overhead Transmission Line",
+    "category_gold": "IEC61970::Wires::ACLineSegment",
+    "definition": "Системоутворююча повітряна лінія електропередачі міжрегіонального значення.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "line", "transmission", "ac_transmission"]
+  },
+  {
+    "id": "TERM_10",
+    "name_uk": "Кабельна лінія зі зшитого поліетилену 110 кВ",
+    "name_en": "110 kV XLPE Underground Cable Line",
+    "category_gold": "IEC61970::Wires::ACLineSegment",
+    "definition": "Підземна або підводна лінія електропередачі з ізоляцією зі зшитого поліетилену в міських вузлах.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "line", "cable", "underground"]
+  },
+  {
+    "id": "TERM_11",
+    "name_uk": "Шунтуючий реактор 750 кВ",
+    "name_en": "750 kV Shunt Reactor",
+    "category_gold": "IEC61970::Wires::Compensator",
+    "definition": "Індуктивний апарат для компенсації надлишкової ємнісної зарядки надвисоковольтних ліній і зниження напруги.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "reactive_compensation", "substation", "inductive"]
+  },
+  {
+    "id": "TERM_12",
+    "name_uk": "Батарея статичних конденсаторів 110 кВ",
+    "name_en": "110 kV Shunt Capacitor Bank",
+    "category_gold": "IEC61970::Wires::Compensator",
+    "definition": "Ємнісний пристрій компенсації реактивної потужності для підвищення рівнів вузлової напруги.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "reactive_compensation", "substation", "capacitive"]
+  },
+  {
+    "id": "TERM_13",
+    "name_uk": "Статичний тиристорний компенсатор (СТК)",
+    "name_en": "Static VAr Compensator (SVC)",
+    "category_gold": "IEC61970::Wires::Compensator",
+    "definition": "Швидкодіючий напівпровідниковий пристрій FACTS для плавного регулювання реактивної потужності та стабілізації напруги.",
+    "attributes": ["asset", "physical_equipment", "reactive_compensation", "power_electronics", "facts"]
+  },
+  {
+    "id": "TERM_14",
+    "name_uk": "Синхронний компенсатор",
+    "name_en": "Synchronous Condenser",
+    "category_gold": "IEC61970::Wires::RotatingMachine",
+    "definition": "Синхронний електродвигун без навантаження на валу, що працює в режимі регулювання реактивної потужності та додає інерцію мережі.",
+    "attributes": ["asset", "physical_equipment", "rotating_machine", "reactive_compensation", "inertia"]
+  },
+  {
+    "id": "TERM_15",
+    "name_uk": "Очисний струмообмежувальний реактор",
+    "name_en": "Current Limiting Reactor",
+    "category_gold": "IEC61970::Wires::SeriesCompensator",
+    "definition": "Послідовно увімкнена котушка індуктивності для обмеження струмів короткого замикання.",
+    "attributes": ["asset", "physical_equipment", "substation", "short_circuit", "inductive"]
+  },
+  {
+    "id": "TERM_16",
+    "name_uk": "Збірні шини підстанції 330 кВ",
+    "name_en": "330 kV Substation Busbar",
+    "category_gold": "IEC61970::Wires::BusbarSection",
+    "definition": "Провідникова конструкція низького опору для приєднання та комутації багатьох електричних приєднань в один вузол.",
+    "attributes": ["asset", "physical_equipment", "high_voltage", "substation", "topology_node"]
+  },
+  {
+    "id": "TERM_17",
+    "name_uk": "Високовольтний трансформатор струму 330 кВ",
+    "name_en": "330 kV Current Instrument Transformer",
+    "category_gold": "IEC61970::Meas::CurrentTransformer",
+    "definition": "Вимірювальний перетворювач струму для гальванічної розв'язки та живлення кіл релейного захисту та комерційного обліку.",
+    "attributes": ["asset", "physical_equipment", "measurement_device", "substation", "instrumentation"]
+  },
+  {
+    "id": "TERM_18",
+    "name_uk": "Ємнісний трансформатор напруги 750 кВ",
+    "name_en": "750 kV Capacitive Voltage Transformer",
+    "category_gold": "IEC61970::Meas::PotentialTransformer",
+    "definition": "Вимірювальний пристрій для перетворення високої напруги в стандартизований вихідний сигнал 100 В та прийому сигналів ВЧ-зв'язку.",
+    "attributes": ["asset", "physical_equipment", "measurement_device", "high_voltage", "instrumentation"]
+  },
+  {
+    "id": "TERM_19",
+    "name_uk": "Газове реле Бухгольца",
+    "name_en": "Buchholz Protection Relay",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Датчик механічного типу, встановлений у маслопроводі між баком і розширником трансформатора для фіксації газоутворення.",
+    "attributes": ["asset", "physical_equipment", "sensor", "protection", "substation"]
+  },
+  {
+    "id": "TERM_20",
+    "name_uk": "Термометричний датчик найбільш нагрітої точки (HST)",
+    "name_en": "Hot-Spot Temperature Sensor",
+    "category_gold": "IEC61970::Meas::Measurement",
+    "definition": "Оптоволоконний або терморезистивний сенсор для прямого вимірювання максимальної температури обмотки автотрансформатора.",
+    "attributes": ["asset", "physical_equipment", "sensor", "thermal", "diagnostics"]
+  },
+  {
+    "id": "TERM_21",
+    "name_uk": "Аналізатор розчинених у маслі газів (DGA)",
+    "name_en": "Dissolved Gas Analysis (DGA) Online Monitor",
+    "category_gold": "IEC61970::Meas::Measurement",
+    "definition": "Автоматичний хроматографічний прилад для виявлення концентрацій ацетилену, метану та водню в трансформаторному маслі.",
+    "attributes": ["asset", "physical_equipment", "diagnostics", "chemical", "sensor", "condition_monitoring"]
+  },
+  {
+    "id": "TERM_22",
+    "name_uk": "Векторний вимірювальний блок (PMU)",
+    "name_en": "Phasor Measurement Unit (PMU)",
+    "category_gold": "IEC61970::Meas::Measurement",
+    "definition": "Пристрій вимірювання синхронізованих за часом GPS векторів напруги і струму (синхрофазорів) високої дискретності.",
+    "attributes": ["asset", "physical_equipment", "measurement_device", "wams", "digital", "grid_dynamic"]
+  },
+  {
+    "id": "TERM_23",
+    "name_uk": "Оптоволоконний датчик струму",
+    "name_en": "Optical Current Sensor",
+    "category_gold": "IEC61970::Meas::CurrentTransformer",
+    "definition": "Цифровий вимірювальний сенсор на базі ефекту Фарадея для прецизійного вимірювання струму в цифрових підстанціях.",
+    "attributes": ["asset", "physical_equipment", "measurement_device", "optical", "digital"]
+  },
+  {
+    "id": "TERM_24",
+    "name_uk": "Турбогенератор атомної електростанції",
+    "name_en": "Nuclear Power Plant Turbogenerator",
+    "category_gold": "IEC61970::Generation::SynchronousMachine",
+    "definition": "Потужний синхронний трифазний генератор, що приводиться в рух паровою турбіною ядерного енергоблока.",
+    "attributes": ["asset", "generation", "baseload", "rotating_machine", "thermal_generation", "inertia"]
+  },
+  {
+    "id": "TERM_25",
+    "name_uk": "Синхронний генератор ТЕС на вугіллі",
+    "name_en": "Coal Thermal Plant Synchronous Generator",
+    "category_gold": "IEC61970::Generation::SynchronousMachine",
+    "definition": "Генератор теплової станції, що забезпечує регулювання частоти та надання первинного обертового резерву.",
+    "attributes": ["asset", "generation", "thermal_generation", "rotating_machine", "dispatchable"]
+  },
+  {
+    "id": "TERM_26",
+    "name_uk": "Газотурбінна пікова установка",
+    "name_en": "Open Cycle Gas Turbine Peak Plant",
+    "category_gold": "IEC61970::Generation::ThermalGeneratingUnit",
+    "definition": "Маневрова генераційна установка швидкого пуску для покриття вечірніх піків навантаження.",
+    "attributes": ["asset", "generation", "thermal_generation", "fast_ramping", "peaking"]
+  },
+  {
+    "id": "TERM_27",
+    "name_uk": "Гідроагрегат руслової ГЕС",
+    "name_en": "Run-of-River Hydro Generating Unit",
+    "category_gold": "IEC61970::Generation::HydroGeneratingUnit",
+    "definition": "Генератор гідроелектростанції, що використовує кінетичну енергію природного стоку річки.",
+    "attributes": ["asset", "generation", "renewable", "hydro", "rotating_machine"]
+  },
+  {
+    "id": "TERM_28",
+    "name_uk": "Оборотний гідроагрегат ГАЕС",
+    "name_en": "Pumped Storage Reversible Unit",
+    "category_gold": "IEC61970::Generation::HydroPump",
+    "definition": "Машина, здатна працювати в режимі генератора при спрацюванні води та в режимі насоса для акумуляції енергії вночі.",
+    "attributes": ["asset", "generation", "storage", "hydro", "balancing", "rotating_machine"]
+  },
+  {
+    "id": "TERM_29",
+    "name_uk": "Вітроенергетична установка з DFIG",
+    "name_en": "Doubly Fed Induction Generator Wind Turbine",
+    "category_gold": "IEC61970::Generation::WindGeneratingUnit",
+    "definition": "Асинхронний генератор подвійного живлення з вітроколесом для генерації електроенергії зі змінною швидкістю обертання.",
+    "attributes": ["asset", "generation", "renewable", "inverter_based", "intermittent"]
+  },
+  {
+    "id": "TERM_30",
+    "name_uk": "Сонячна фотоелектрична електростанція (СЕС)",
+    "name_en": "Solar Photovoltaic Generating Farm",
+    "category_gold": "IEC61970::Generation::SolarGeneratingUnit",
+    "definition": "Масив напівпровідникових фотопанелей з мережевими інверторами для прямого перетворення сонячного випромінювання.",
+    "attributes": ["asset", "generation", "renewable", "inverter_based", "intermittent", "zero_inertia"]
+  },
+  {
+    "id": "TERM_31",
+    "name_uk": "Промислова акумуляторна система BESS",
+    "name_en": "Grid-Scale Battery Energy Storage System (BESS)",
+    "category_gold": "IEC61970::Generation::BatteryUnit",
+    "definition": "Літій-іонна або проточна система накопичення енергії з чотириквадрантним інвертором для швидкого надання резервів потужності.",
+    "attributes": ["asset", "storage", "inverter_based", "fast_response", "balancing"]
+  },
+  {
+    "id": "TERM_32",
+    "name_uk": "Диференційний струмовий захист трансформатора (ДЗТ)",
+    "name_en": "Transformer Differential Current Protection",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Основний швидкодіючий захист з гальмуванням, що спрацьовує при невідповідності струмів на вводах і виводах трансформатора.",
+    "attributes": ["function", "protection", "unit_protection", "relay_automation", "fast_acting"]
+  },
+  {
+    "id": "TERM_33",
+    "name_uk": "Дистанційний ступеневий захист лінії (ДЗ)",
+    "name_en": "Stepped Distance Protection Relay",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Захист ліній передачі, що вимірює комплексний опір петлі замикання для локалізації та селективного відключення аварії.",
+    "attributes": ["function", "protection", "non_unit_protection", "relay_automation", "stepped"]
+  },
+  {
+    "id": "TERM_34",
+    "name_uk": "Диференційно-фазний захист лінії (ДФЗ)",
+    "name_en": "Phase Comparison Differential Protection (DFZ)",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Основний захист ПЛ 330-750 кВ, що порівнює фази струмів по кінцях лінії за допомогою сигналів високочастотного зв'язку.",
+    "attributes": ["function", "protection", "unit_protection", "relay_automation", "high_voltage"]
+  },
+  {
+    "id": "TERM_35",
+    "name_uk": "Максимальний струмовий захист з витримкою часу (МТЗ)",
+    "name_en": "Time-Overcurrent Protection Relay",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Резервний захист, спрацьовування якого активується при перевищенні заданого порогу сили струму протягом встановленого часу.",
+    "attributes": ["function", "protection", "backup_protection", "relay_automation"]
+  },
+  {
+    "id": "TERM_36",
+    "name_uk": "Автоматичне частотне розвантаження першої черги (АЧР-1)",
+    "name_en": "Under-Frequency Load Shedding Stage 1 (UFLS-1)",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Протиаварійна автоматика швидкого скидання навантаження споживачів при зниженні системної частоти нижче 49.0 Гц.",
+    "attributes": ["function", "protection", "frequency_stability", "emergency_control", "load_shedding"]
+  },
+  {
+    "id": "TERM_37",
+    "name_uk": "Автоматичне частотне розвантаження другої черги (АЧР-2)",
+    "name_en": "Under-Frequency Load Shedding Stage 2 (UFLS-2)",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Протиаварійна автоматика з витримкою часу для ліквідації затяжного зависання низької частоти нижче 48.6 Гц.",
+    "attributes": ["function", "protection", "frequency_stability", "emergency_control", "timed"]
+  },
+  {
+    "id": "TERM_38",
+    "name_uk": "Протиаварійне RoCoF-скидання навантаження",
+    "name_en": "Rate-of-Change-of-Frequency (RoCoF) Relay",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Автоматика відключення блоків споживання при аномально високій швидкості спаду частоти (df/dt), що вказує на розрив мережі.",
+    "attributes": ["function", "protection", "frequency_stability", "fast_acting", "emergency_control"]
+  },
+  {
+    "id": "TERM_39",
+    "name_uk": "Автоматичне повторне ввімкнення (АПВ)",
+    "name_en": "Automatic Reclosing (Auto-Reclose)",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Автоматика відновлення живлення лінії після її захисного відключення у разі самоусувних грозових або дугових перекриттів.",
+    "attributes": ["function", "automation", "restoration", "relay_automation"]
+  },
+  {
+    "id": "TERM_40",
+    "name_uk": "Автоматичне введення резерву (АВР)",
+    "name_en": "Automatic Transfer Switch (ATS)",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Пристрій автоматичного перемикання живлення шин власних потреб на резервне джерело при зникненні напруги на основному ввіді.",
+    "attributes": ["function", "automation", "reliability", "substation"]
+  },
+  {
+    "id": "TERM_41",
+    "name_uk": "Пристрій резервування відмови вимикача (ПРВВ)",
+    "name_en": "Breaker Failure Protection (BFP)",
+    "category_gold": "IEC61970::Protection::ProtectionRelay",
+    "definition": "Логічна автоматика, яка подає імпульс на відключення суміжних вимикачів системи шин, якщо головний вимикач не розімкнув коло.",
+    "attributes": ["function", "protection", "backup_protection", "fault_clearing"]
+  },
+  {
+    "id": "TERM_42",
+    "name_uk": "Системна частота змінного струму",
+    "name_en": "Grid System Frequency",
+    "category_gold": "IEC61970::StateVariables::SvStatus",
+    "definition": "Глобальний режимний параметр енергосистеми (номінал 50.00 Гц), спільний для всієї синхронної зони, що відображає баланс потужностей.",
+    "attributes": ["regime_parameter", "frequency", "global_variable", "ac_transmission", "stability"]
+  },
+  {
+    "id": "TERM_43",
+    "name_uk": "Вузлова напруга змінного струму",
+    "name_en": "Busbar Voltage Magnitude",
+    "category_gold": "IEC61970::StateVariables::SvVoltage",
+    "definition": "Локальний режимний вектор діючого значення напруги у вузлі розрахункової схеми.",
+    "attributes": ["regime_parameter", "voltage", "local_variable", "substation"]
+  },
+  {
+    "id": "TERM_44",
+    "name_uk": "Фазовий кут напруги вузла",
+    "name_en": "Voltage Phase Angle",
+    "category_gold": "IEC61970::StateVariables::SvVoltage",
+    "definition": "Електричний кут фази синусоїди напруги вузла відносно базисного балансуючого вузла, що визначає перетоки активної потужності.",
+    "attributes": ["regime_parameter", "voltage", "phase_angle", "power_flow"]
+  },
+  {
+    "id": "TERM_45",
+    "name_uk": "Потік активної потужності по ЛЕП",
+    "name_en": "Active Power Flow",
+    "category_gold": "IEC61970::StateVariables::SvPowerFlow",
+    "definition": "Швидкість передачі електромагнітної енергії, що перетворюється на корисну роботу (МВт).",
+    "attributes": ["regime_parameter", "power_flow", "active_power", "operational"]
+  },
+  {
+    "id": "TERM_46",
+    "name_uk": "Потік реактивної потужності по ЛЕП",
+    "name_en": "Reactive Power Flow",
+    "category_gold": "IEC61970::StateVariables::SvPowerFlow",
+    "definition": "Обмін енергією між магнітними полями індуктивностей та електричними полями ємностей мережі (Мвар).",
+    "attributes": ["regime_parameter", "power_flow", "reactive_power", "operational"]
+  },
+  {
+    "id": "TERM_47",
+    "name_uk": "Струмове навантаження фазного проводу",
+    "name_en": "Branch Current Loading",
+    "category_gold": "IEC61970::OperationalLimits::CurrentLimit",
+    "definition": "Діюче значення струму у провіднику як відсоток від допустимого тривалого теплового струму проводу за ПУЕ.",
+    "attributes": ["regime_parameter", "thermal", "operational_limit", "monitoring"]
+  },
+  {
+    "id": "TERM_48",
+    "name_uk": "Рівень заряду накопичувача (SOC)",
+    "name_en": "Battery State of Charge (SOC)",
+    "category_gold": "IEC61970::Generation::BatteryState",
+    "definition": "Відсоткове співвідношення залишкової ємності електрохімічної батареї до її повної паспортної ємності.",
+    "attributes": ["regime_parameter", "storage", "operational", "monitoring"]
+  },
+  {
+    "id": "TERM_49",
+    "name_uk": "Резерв підтримки частоти (FCR / РПЧ)",
+    "name_en": "Frequency Containment Reserve (FCR)",
+    "category_gold": "IEC61970::MarketOperations::AncillaryService",
+    "definition": "Швидкодіючий автоматичний первинний резерв потужності (активація за 0–30 секунд) для стабілізації частоти після аварійного збурення.",
+    "attributes": ["ancillary_service", "market", "balancing", "fast_ramping", "frequency_stability"]
+  },
+  {
+    "id": "TERM_50",
+    "name_uk": "Автоматичний резерв відновлення частоти (aFRR / аРВЧ)",
+    "name_en": "automatic Frequency Restoration Reserve (aFRR)",
+    "category_gold": "IEC61970::MarketOperations::AncillaryService",
+    "definition": "Вторинний резерв генерації, що активується автоматичним регулятором перетоків і частоти (АРПЧ/LFC) за час до 5–15 хвилин.",
+    "attributes": ["ancillary_service", "market", "balancing", "secondary_control"]
+  },
+  {
+    "id": "TERM_51",
+    "name_uk": "Ручний резерв відновлення частоти (mFRR / рРВЧ)",
+    "name_en": "manual Frequency Restoration Reserve (mFRR)",
+    "category_gold": "IEC61970::MarketOperations::AncillaryService",
+    "definition": "Третинний диспетчерський резерв потужності з ручною активацією за командами диспетчера (час пуску 15–30 хвилин).",
+    "attributes": ["ancillary_service", "market", "balancing", "tertiary_control", "dispatchable"]
+  },
+  {
+    "id": "TERM_52",
+    "name_uk": "Резерв заміщення (RR)",
+    "name_en": "Replacement Reserve (RR)",
+    "category_gold": "IEC61970::MarketOperations::AncillaryService",
+    "definition": "Резерв генерації тривалої готовності для компенсації нестачі відновлених резервів FRR при тривалих дефіцитах у системі.",
+    "attributes": ["ancillary_service", "market", "balancing", "slow_response"]
+  },
+  {
+    "id": "TERM_53",
+    "name_uk": "Диспетчерський редиспатчинг",
+    "name_en": "Operational Redispatching",
+    "category_gold": "IEC61970::OperationalLimits::OperationalRestriction",
+    "definition": "Примусова зміна графіка роботи електростанцій для усунення перевантажень у лініях електропередачі (Network Congestion).",
+    "attributes": ["market_action", "balancing", "congestion_management", "operational"]
+  },
+  {
+    "id": "TERM_54",
+    "name_uk": "Оцінювання стану енергосистеми (State Estimation)",
+    "name_en": "Power System State Estimation",
+    "category_gold": "IEC61970::StateVariables::StateEstimation",
+    "definition": "Алгоритм фільтрації та статистичного усунення грубих похибок телеметричних вимірювань для формування узгодженої моделі вузлових напруг.",
+    "attributes": ["software_function", "scada_ems", "analytical_algorithm", "state_variable"]
+  },
+  {
+    "id": "TERM_55",
+    "name_uk": "Аналіз стійкості за критерієм N-1 (Contingency Analysis)",
+    "name_en": "N-1 Contingency Analysis",
+    "category_gold": "IEC61970::Contingency::Contingency",
+    "definition": "Розрахункова перевірка дотримання безпечних меж напруг та струмів у разі аварійного відключення будь-якого одного одиничного елемента.",
+    "attributes": ["software_function", "scada_ems", "security_analysis", "analytical_algorithm"]
+  },
+  {
+    "id": "TERM_56",
+    "name_uk": "Оптимальний розподіл потоків потужності (OPF)",
+    "name_en": "Optimal Power Flow (OPF)",
+    "category_gold": "IEC61970::Generation::OptimizationFunction",
+    "definition": "Математична оптимізація режимів роботи генераторів та регуляторів трансформаторів для мінімізації технологічних втрат чи вартості.",
+    "attributes": ["software_function", "scada_ems", "optimization", "analytical_algorithm"]
+  },
+  {
+    "id": "TERM_57",
+    "name_uk": "Коротке замикання на землю (Однофазне КЗ)",
+    "name_en": "Single Phase to Ground Fault",
+    "category_gold": "IEC61970::Fault::Fault",
+    "definition": "Найпоширеніший аварійний процес замикання фазного проводу на землю або опору в мережах з глухозаземленою нейтраллю.",
+    "attributes": ["grid_incident", "fault_event", "electrical_disturbance", "short_circuit"]
+  },
+  {
+    "id": "TERM_58",
+    "name_uk": "Міжфазне коротке замикання без землі",
+    "name_en": "Three-Phase Symmetrical Fault",
+    "category_gold": "IEC61970::Fault::Fault",
+    "definition": "Найважчий аварійний процес замикання всіх фаз між собою, що викликає максимальні ударні струми та провал напруги.",
+    "attributes": ["grid_incident", "fault_event", "electrical_disturbance", "short_circuit"]
+  },
+  {
+    "id": "TERM_59",
+    "name_uk": "Каскадне аварійне знеструмлення (Blackout)",
+    "name_en": "Cascading Grid Collapse (Blackout)",
+    "category_gold": "IEC61970::Fault::GridIncident",
+    "definition": "Системна аварія з ланцюговою реакцією відключення ліній і генераторів, що завершується повним погашенням синхронної зони.",
+    "attributes": ["grid_incident", "systemic_collapse", "emergency_state", "blackout"]
+  },
+  {
+    "id": "TERM_60",
+    "name_uk": "Асинхронний хід у системі",
+    "name_en": "Out-of-Step Power Swing",
+    "category_gold": "IEC61970::Fault::DynamicInstability",
+    "definition": "Порушення динамічної синхронної стійкості генераторів, що супроводжується глибокими пульсаціями напруги та струмів зв'язку.",
+    "attributes": ["grid_incident", "dynamic_instability", "power_swing", "ac_transmission"]
+  },
+  {
+    "id": "TERM_61",
+    "name_uk": "Лавина напруги (Voltage Collapse)",
+    "name_en": "Voltage Collapse / Instability",
+    "category_gold": "IEC61970::Fault::DynamicInstability",
+    "definition": "Неконтрольоване прогресуюче падіння вузлових напруг у дефіцитному районі через вичерпання резервів реактивної потужності.",
+    "attributes": ["grid_incident", "dynamic_instability", "voltage_instability", "reactive_compensation"]
+  },
+  {
+    "id": "TERM_62",
+    "name_uk": "Субсинхронний резонанс (SSR)",
+    "name_en": "Subsynchronous Resonance (SSR)",
+    "category_gold": "IEC61970::Fault::DynamicInstability",
+    "definition": "Резонансна взаємодія між механічною валопровідною системою турбоагрегату та ємнісно компенсованою мережею на частотах нижче 50 Гц.",
+    "attributes": ["grid_incident", "dynamic_instability", "resonance", "high_voltage"]
+  },
+  {
+    "id": "TERM_63",
+    "name_uk": "Частковий розряд в ізоляції кабелю",
+    "name_en": "Partial Discharge in Cable Insulation",
+    "category_gold": "IEC61970::Meas::DiagnosticIndication",
+    "definition": "Локалізований електричний пробій мікропустот твердої ізоляції кабелю чи вводу, що поступово руйнує діелектрик.",
+    "attributes": ["diagnostics", "degradation", "electrical_asset", "cable", "substation"]
+  },
+  {
+    "id": "TERM_64",
+    "name_uk": "Обрив фазного проводу ЛЕП",
+    "name_en": "Phase Conductor Rupture",
+    "category_gold": "IEC61970::Fault::Fault",
+    "definition": "Механічне пошкодження і падіння фазного проводу лінії з виникненням неповнофазного режиму та замиканням на землю.",
+    "attributes": ["grid_incident", "mechanical_damage", "fault_event", "line"]
+  }
+]
