@@ -1,0 +1,1332 @@
+{
+  "endpoint": "https://query.wikidata.org/sparql",
+  "fetched_at": "2026-11-06T22:41:55.384801+00:00",
+  "queries": {
+    "CQ1": {
+      "file": "cq01_npp.sparql",
+      "query_name": "Атомні електростанції України (потужність, координати, оператор)",
+      "status": "success",
+      "elapsed_sec": 0.352,
+      "count": 6,
+      "boolean": null,
+      "bindings": [
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q909477"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "5700"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(34.591666666 47.508333333)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Запорізька АЕС"
+          },
+          "operatorLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Енергоатом"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q215419"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "3515"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(30.099147 51.389553)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Чорнобильська атомна електростанція"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q186223"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2850"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(31.21666667 47.81666667)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Південно-Українська АЕС"
+          },
+          "operatorLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Енергоатом"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q301915"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2657"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(25.89166667 51.32777778)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Рівненська АЕС"
+          },
+          "operatorLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Енергоатом"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q1037144"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2000"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(26.645 50.305)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Хмельницька АЕС"
+          },
+          "operatorLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Енергоатом"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q4515680"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(32.79 49.08944444)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Чигиринська АЕС"
+          }
+        }
+      ]
+    },
+    "CQ2": {
+      "file": "cq02_pspp_ask.sparql",
+      "query_name": "Наявність гідроакумулюючих станцій (ГАЕС) в Україні",
+      "status": "success",
+      "elapsed_sec": 0.518,
+      "count": 1,
+      "boolean": true,
+      "bindings": []
+    },
+    "CQ3": {
+      "file": "cq03_nuclear_by_country.sparql",
+      "query_name": "Кількість ядерних станцій у країнах Європи з фільтрацією",
+      "status": "success",
+      "elapsed_sec": 1.354,
+      "count": 7,
+      "boolean": null,
+      "bindings": [
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q183"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Німеччина"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "30"
+          }
+        },
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q142"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Франція"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "26"
+          }
+        },
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q29"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Іспанія"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "12"
+          }
+        },
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q38"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Італія"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "7"
+          }
+        },
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q212"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Україна"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "6"
+          }
+        },
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q36"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Польща"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "4"
+          }
+        },
+        {
+          "country": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q218"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Румунія"
+          },
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "2"
+          }
+        }
+      ]
+    },
+    "CQ4": {
+      "file": "cq04_taxonomy_closure.sparql",
+      "query_name": "Таксономічне замикання підкласів електростанцій",
+      "status": "success",
+      "elapsed_sec": 3.681,
+      "count": 30,
+      "boolean": null,
+      "bindings": [
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q107001577"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q107001577"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q107696444"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q107696444"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q112624792"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q112624792"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q11295963"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q11295963"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q11564531"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q11564531"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q11581764"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q11581764"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q118445030"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q118445030"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q136990354"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q136990354"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q141927705"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q141927705"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q141970750"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q141970750"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q15807573"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q15807573"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q1984307"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q1984307"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q2356681"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q2356681"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q2357660"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q2357660"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q24837076"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q24837076"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q4294186"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q4294186"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q72425920"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q72425920"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q779441"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q779441"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q864421"
+          },
+          "subClassLabel": {
+            "type": "literal",
+            "value": "Q864421"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q104853558"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Central station"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q132861435"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Cismar solar park"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q25486988"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Coal gas turbine power plant"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q123125390"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Combined cycle hydrogen power plant"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q5155059"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Community solar farm"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q141969930"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Coway PowerBox"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q141971475"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Coway PowerOffice"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q131429270"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "East Rockingham WTE G1"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q829113"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Gravitation water vortex power plant"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q129262562"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Groß Schlamin solar park"
+          }
+        },
+        {
+          "subClass": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q132861556"
+          },
+          "subClassLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Heiligenhafen solar park"
+          }
+        }
+      ]
+    },
+    "CQ5": {
+      "file": "cq05_hydro_stats.sparql",
+      "query_name": "Сумарна та середня потужність гідроелектростанцій України",
+      "status": "success",
+      "elapsed_sec": 1.616,
+      "count": 1,
+      "boolean": null,
+      "bindings": [
+        {
+          "plantCount": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "38"
+          },
+          "totalCapacityMW": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "7399.344"
+          },
+          "avgCapacityMW": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "194.71957894736842105263"
+          }
+        }
+      ]
+    },
+    "CQ6": {
+      "file": "cq06_top_ukraine_power.sparql",
+      "query_name": "Топ найпотужніших електростанцій України",
+      "status": "success",
+      "elapsed_sec": 2.805,
+      "count": 10,
+      "boolean": null,
+      "bindings": [
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q909477"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Запорізька АЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "атомна електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "5700"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3365756"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Запорізька ТЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "паливна електрівня"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "3650"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3365756"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Запорізька ТЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "газова електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "3650"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3365756"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Запорізька ТЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "вугільна електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "3650"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q2566637"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Вуглегірська ТЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "вугільна електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "3600"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q215419"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Чорнобильська атомна електростанція"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "атомна електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "3515"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q11982263"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Криворізька ТЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "теплова електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2892"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q186223"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Південно-Українська АЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "атомна електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2850"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q301915"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Рівненська АЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "атомна електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2657"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3443751"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Зміївська ТЕС"
+          },
+          "typeLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "газова електростанція"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "2200"
+          }
+        }
+      ]
+    },
+    "CQ7": {
+      "file": "cq07_dnipro_hydro_cascade.sparql",
+      "query_name": "Гідроелектростанції Дніпровського каскаду (річка Дніпро)",
+      "status": "success",
+      "elapsed_sec": 1.703,
+      "count": 8,
+      "boolean": null,
+      "bindings": [
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q738619"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "1548"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(35.086111111 47.869444444)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Дніпровська ГЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q4212381"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "1000"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(31.45055556 49.85194444)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Канівська ГАЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3379438"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "625"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(33.2506 49.0775)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Кременчуцька ГЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q2027431"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "444"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(31.47172222 49.76652778)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Канівська ГЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3443779"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "408.5"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(30.511938 50.588795)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Київська ГЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3379468"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "352"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(34.5413 48.548)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Середньодніпровська ГЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q3379049"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "351"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(33.371797 46.776028)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Каховська ГЕС"
+          }
+        },
+        {
+          "plant": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q4220145"
+          },
+          "capacity": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+            "type": "literal",
+            "value": "235.5"
+          },
+          "coords": {
+            "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "type": "literal",
+            "value": "Point(30.48775 50.61038889)"
+          },
+          "plantLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Київська ГАЕС"
+          }
+        }
+      ]
+    },
+    "CQ8": {
+      "file": "cq08_tso_operators.sparql",
+      "query_name": "Оператори систем передачі (TSO) в країнах Європи",
+      "status": "success",
+      "elapsed_sec": 0.326,
+      "count": 11,
+      "boolean": null,
+      "bindings": [
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q1551220"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "1985-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Red Eléctrica de España"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Іспанія"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q936325"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "1999-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Terna Group"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Італія"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q108874442"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "2017-06-30T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "Ferngas Netzgesellschaft"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Німеччина"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q1662830"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "2009-05-04T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "TenneT TSO"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Німеччина"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q1672772"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "1997-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "en",
+            "type": "literal",
+            "value": "TransnetBW"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Німеччина"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q241331"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "2002-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "50Hertz Transmission GmbH"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Німеччина"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q477318"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "2003-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Amprion"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Німеччина"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q1749435"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "1990-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Polskie Sieci Elektroenergetyczne"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Польща"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q88272702"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "MAVIR"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Угорщина"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q12132842"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "1998-04-15T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Укренерго"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Україна"
+          }
+        },
+        {
+          "company": {
+            "type": "uri",
+            "value": "http://www.wikidata.org/entity/Q2178795"
+          },
+          "inception": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "type": "literal",
+            "value": "2000-01-01T00:00:00Z"
+          },
+          "companyLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "RTE"
+          },
+          "countryLabel": {
+            "xml:lang": "uk",
+            "type": "literal",
+            "value": "Франція"
+          }
+        }
+      ]
+    }
+  },
+  "llm_evaluations": {
+    "LLM_CASE_1": {
+      "title": "Запит АЕС України (галюцинація схеми DBpedia та відсутність префіксів)",
+      "raw_execution": {
+        "status": "error",
+        "count": 0,
+        "boolean": null,
+        "error": "429 Client Error: Too Many Requests for url: https://query.wikidata.org/sparql?query=SELECT+%3Fplant+%3Fcapacity+WHERE+%7B%0A++%3Fplant+rdf%3Atype+dbo%3ANuclearPowerPlant+.%0A++%3Fplant+dbo%3Alocation+dbr%3AUkraine+.%0A++%3Fplant+dbo%3Acapacity+%3Fcapacity+.%0A%7D&format=json"
+      },
+      "fixed_execution": {
+        "status": "success",
+        "count": 6,
+        "boolean": null,
+        "error": null
+      }
+    },
+    "LLM_CASE_2": {
+      "title": "Запит ГАЕС України (інверсія суб'єкта та об'єкта в ASK)",
+      "raw_execution": {
+        "status": "success",
+        "count": 0,
+        "boolean": false,
+        "error": null
+      },
+      "fixed_execution": {
+        "status": "success",
+        "count": 1,
+        "boolean": true,
+        "error": null
+      }
+    },
+    "LLM_CASE_3": {
+      "title": "Запит Дніпровського гідрокаскаду (хибний Q-код об'єкта та відсутність транзитивності)",
+      "raw_execution": {
+        "status": "success",
+        "count": 0,
+        "boolean": null,
+        "error": null
+      },
+      "fixed_execution": {
+        "status": "success",
+        "count": 8,
+        "boolean": null,
+        "error": null
+      }
+    },
+    "LLM_CASE_4": {
+      "title": "Агрегація АЕС за країнами (відсутність сервісу міток та групування за неагрегованими змінними)",
+      "raw_execution": {
+        "status": "success",
+        "count": 57,
+        "boolean": null,
+        "error": null
+      },
+      "fixed_execution": {
+        "status": "success",
+        "count": 7,
+        "boolean": null,
+        "error": null
+      }
+    }
+  }
+}

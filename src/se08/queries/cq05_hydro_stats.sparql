@@ -1,0 +1,10 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT (COUNT(?plant) AS ?plantCount) 
+       (SUM(?capacity) AS ?totalCapacityMW) 
+       (AVG(?capacity) AS ?avgCapacityMW) WHERE {
+  ?plant wdt:P31/wdt:P279* wd:Q15911738 ;
+         wdt:P17 wd:Q212 ;
+         wdt:P2109 ?capacity .
+}

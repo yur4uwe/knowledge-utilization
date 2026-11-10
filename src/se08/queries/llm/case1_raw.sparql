@@ -1,0 +1,5 @@
+SELECT ?plant ?capacity WHERE {
+  ?plant rdf:type dbo:NuclearPowerPlant .
+  ?plant dbo:location dbr:Ukraine .
+  ?plant dbo:capacity ?capacity .
+}

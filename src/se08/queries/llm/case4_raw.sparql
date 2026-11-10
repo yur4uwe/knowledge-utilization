@@ -1,0 +1,8 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?country (COUNT(?plant) AS ?count) WHERE {
+  ?plant wdt:P31 wd:Q134447 ;
+         wdt:P17 ?country .
+}
+GROUP BY ?country
