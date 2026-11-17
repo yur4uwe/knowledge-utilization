@@ -1,0 +1,113 @@
+{
+  "experiment": "Text-to-Cypher Refined Evaluation (v2 with Schema in Prompt & Read-only Role)",
+  "model": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "system_prompt": "You are a read-only Cypher assistant for Neo4j 5.x. STRICT RULES: 1. Read-only role (NEVER output CREATE, MERGE, SET, DELETE, DROP). 2. Use ONLY allowed labels (:Substation, :GeneratingUnit, :EnergyStorage, :TransmissionLine, :Transformer, :ProtectionDevice, :FaultEvent, :PowerConsumer) and relationship types (:CONNECTED_TO, :SUPPLIES_POWER_TO, :INSTALLED_AT, :STEPS_VOLTAGE, :PROTECTS, :AFFECTS_ASSET, :TRIGGERS_ACTION, :ACTIVATES_STORAGE, :FEEDS_LOAD). 3. Always include LIMIT 50 unless an explicit aggregation is performed. 4. Return valid Cypher only.",
+  "results": [
+    {
+      "id": "Q01",
+      "question": "Які підстанції мають номінальну напругу 750 кВ?",
+      "generated_cypher": "MATCH (s:Substation {voltageKV: 750.0}) RETURN s.name ORDER BY s.name LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q02",
+      "question": "Які електростанції видають потужність на ПС Вінницька 750 кВ?",
+      "generated_cypher": "MATCH (g:GeneratingUnit)-[:SUPPLIES_POWER_TO]->(s:Substation {id: 'SS_Vinnytska_750'}) RETURN g.name, g.capacityMW ORDER BY g.capacityMW DESC LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q03",
+      "question": "Яка сумарна потужність сонячної генерації в енергосистемі?",
+      "generated_cypher": "MATCH (g:GeneratingUnit {type: 'Solar'}) RETURN sum(g.capacityMW) AS totalSolarMW LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q04",
+      "question": "Які лінії електропередачі працюють на напрузі 750 кВ?",
+      "generated_cypher": "MATCH (l:TransmissionLine {voltageKV: 750.0}) RETURN l.name ORDER BY l.name LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q05",
+      "question": "Які трансформатори мають концентрацію водню понад 100 ppm або ацетилену понад 5 ppm?",
+      "generated_cypher": "MATCH (t:Transformer) WHERE t.dgaH2Ppm > 100.0 OR t.dgaC2H2Ppm > 5.0 RETURN t.name, t.dgaH2Ppm, t.dgaC2H2Ppm LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q06",
+      "question": "Які накопичувачі енергії активуються автоматикою при відхиленні частоти?",
+      "generated_cypher": "MATCH (:FaultEvent {eventType: 'FrequencyDeviation'})-[:TRIGGERS_ACTION]->(:ProtectionDevice)-[:ACTIVATES_STORAGE]->(st:EnergyStorage) RETURN st.name, st.capacityMW LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q07",
+      "question": "Який пристрій захисту та час вимкнення спрацювали при короткому замиканні на лінії Західна-Вінницька?",
+      "generated_cypher": "MATCH (f:FaultEvent {id: 'FAULT_SC_Line750_Zakhidna'})-[:TRIGGERS_ACTION]->(p:ProtectionDevice) RETURN p.name, p.tripTimeMS LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q08",
+      "question": "Які споживачі живляться від ПС Київська 750 кВ та яке їхнє навантаження?",
+      "generated_cypher": "MATCH (s:Substation {id: 'SS_Kyivska_750'})-[:FEEDS_LOAD]->(c:PowerConsumer) RETURN c.name, c.demandMW LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q09",
+      "question": "Знайди всі атомні електростанції та їхню встановлену потужність",
+      "generated_cypher": "MATCH (g:GeneratingUnit {type: 'Nuclear'}) RETURN g.name, g.capacityMW ORDER BY g.capacityMW DESC LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q10",
+      "question": "Які генератори мають можливість диспетчеризації та потужність від 300 МВт?",
+      "generated_cypher": "MATCH (g:GeneratingUnit) WHERE g.dispatchable = true AND g.capacityMW >= 300.0 RETURN g.name, g.capacityMW ORDER BY g.capacityMW DESC LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q11",
+      "question": "Які трансформатори встановлені на ПС Західноукраїнська 750 кВ?",
+      "generated_cypher": "MATCH (t:Transformer)-[:INSTALLED_AT]->(s:Substation {id: 'SS_Zakhidnoukrainska_750'}) RETURN t.name, t.voltageKV, t.status LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q12",
+      "question": "Скільки всього підстанцій розташовано в системі за класами напруги?",
+      "generated_cypher": "MATCH (s:Substation) RETURN s.voltageKV AS voltageClass, count(s) AS countSubstations ORDER BY voltageClass DESC LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q13",
+      "question": "Знайди найкоротший шлях між ПС Західноукраїнська 750 кВ та ПС Київська 750 кВ",
+      "generated_cypher": "MATCH (s1:Substation {id: 'SS_Zakhidnoukrainska_750'}), (s2:Substation {id: 'SS_Kyivska_750'}) MATCH p = shortestPath((s1)-[:CONNECTED_TO*..10]-(s2)) RETURN [n IN nodes(p) | n.name] AS pathNodes, length(p) AS hopCount LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q14",
+      "question": "Які енергоблоки підключені до підстанцій 330 кВ?",
+      "generated_cypher": "MATCH (g:GeneratingUnit)-[:SUPPLIES_POWER_TO]->(s:Substation {voltageKV: 330.0}) RETURN g.name, s.name, g.capacityMW LIMIT 50",
+      "status": "success",
+      "error": null
+    },
+    {
+      "id": "Q15",
+      "question": "Яка середня потужність одиниць генерації теплових електростанцій?",
+      "generated_cypher": "MATCH (g:GeneratingUnit {type: 'Thermal'}) RETURN avg(g.capacityMW) AS avgThermalCapacityMW LIMIT 50",
+      "status": "success",
+      "error": null
+    }
+  ]
+}

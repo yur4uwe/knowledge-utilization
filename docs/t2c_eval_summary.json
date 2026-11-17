@@ -1,0 +1,258 @@
+{
+  "v1_baseline": {
+    "total": 15,
+    "read_only_accuracy": 1.0,
+    "schema_accuracy": 0.7333333333333333,
+    "execution_accuracy": 0.7333333333333333,
+    "details": [
+      {
+        "id": "Q01",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q02",
+        "read_only": true,
+        "schema": false,
+        "limit": false,
+        "exec": false,
+        "error": "Blocked by read-only or schema adherence guardrails"
+      },
+      {
+        "id": "Q03",
+        "read_only": true,
+        "schema": false,
+        "limit": true,
+        "exec": false,
+        "error": "Blocked by read-only or schema adherence guardrails"
+      },
+      {
+        "id": "Q04",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q05",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q06",
+        "read_only": true,
+        "schema": false,
+        "limit": false,
+        "exec": false,
+        "error": "Blocked by read-only or schema adherence guardrails"
+      },
+      {
+        "id": "Q07",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q08",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q09",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q10",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q11",
+        "read_only": true,
+        "schema": false,
+        "limit": false,
+        "exec": false,
+        "error": "Blocked by read-only or schema adherence guardrails"
+      },
+      {
+        "id": "Q12",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q13",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q14",
+        "read_only": true,
+        "schema": true,
+        "limit": false,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q15",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      }
+    ]
+  },
+  "v2_refined": {
+    "total": 15,
+    "read_only_accuracy": 1.0,
+    "schema_accuracy": 1.0,
+    "execution_accuracy": 1.0,
+    "details": [
+      {
+        "id": "Q01",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q02",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q03",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q04",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q05",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q06",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q07",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q08",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q09",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q10",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q11",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q12",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q13",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q14",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      },
+      {
+        "id": "Q15",
+        "read_only": true,
+        "schema": true,
+        "limit": true,
+        "exec": true,
+        "error": null
+      }
+    ]
+  }
+}

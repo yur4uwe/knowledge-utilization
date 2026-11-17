@@ -1,0 +1,26 @@
+flowchart LR
+    subgraph Nodes["Вершини (Labels & Properties)"]
+        Substation["<b>:Substation</b><br/>id: string [PK]<br/>name: string<br/>voltageKV: float<br/>region: string"]
+        GenUnit["<b>:GeneratingUnit</b><br/>id: string [PK]<br/>name: string<br/>type: string<br/>capacityMW: float<br/>dispatchable: boolean"]
+        Storage["<b>:EnergyStorage</b><br/>id: string [PK]<br/>name: string<br/>type: string<br/>capacityMW: float<br/>storageMWh: float"]
+        Line["<b>:TransmissionLine</b><br/>id: string [PK]<br/>name: string<br/>voltageKV: float<br/>lengthKM: float<br/>capacityMVA: float"]
+        Transformer["<b>:Transformer</b><br/>id: string [PK]<br/>name: string<br/>primaryKV: float<br/>secondaryKV: float<br/>dgaH2Ppm: float<br/>dgaC2H2Ppm: float<br/>status: string"]
+        Protection["<b>:ProtectionDevice</b><br/>id: string [PK]<br/>name: string<br/>protectionType: string<br/>tripTimeMS: int"]
+        Fault["<b>:FaultEvent</b><br/>id: string [PK]<br/>eventType: string<br/>faultCurrentKA: float<br/>gridFrequencyHz: float<br/>timestamp: string"]
+        Consumer["<b>:PowerConsumer</b><br/>id: string [PK]<br/>name: string<br/>demandMW: float<br/>priorityCategory: int"]
+    end
+
+    GenUnit -->|":SUPPLIES_POWER_TO<br/>[source, confidence, validFrom]"| Substation
+    Storage -->|":SUPPLIES_POWER_TO<br/>[source, confidence, validFrom]"| Substation
+    Substation -->|":CONNECTED_TO<br/>[source, confidence, validFrom]"| Line
+    Line -->|":CONNECTED_TO<br/>[source, confidence, validFrom]"| Substation
+    Transformer -->|":INSTALLED_AT<br/>[source, confidence, validFrom]"| Substation
+    Transformer -->|":STEPS_VOLTAGE<br/>[source, confidence, validFrom]"| Substation
+    Protection -->|":INSTALLED_AT<br/>[source, confidence, validFrom]"| Substation
+    Protection -->|":PROTECTS<br/>[source, confidence, validFrom]"| Line
+    Protection -->|":PROTECTS<br/>[source, confidence, validFrom]"| Transformer
+    Fault -->|":AFFECTS_ASSET<br/>[source, confidence, validFrom]"| Line
+    Fault -->|":AFFECTS_ASSET<br/>[source, confidence, validFrom]"| Transformer
+    Fault -->|":TRIGGERS_ACTION<br/>[source, confidence, validFrom]"| Protection
+    Protection -->|":ACTIVATES_STORAGE<br/>[source, confidence, validFrom]"| Storage
+    Substation -->|":FEEDS_LOAD<br/>[source, confidence, validFrom]"| Consumer

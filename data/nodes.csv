@@ -1,0 +1,155 @@
+id,label,name,type,voltageKV,capacityMW,status,dgaH2Ppm,dgaC2H2Ppm,gridFrequencyHz,faultCurrentKA,demandMW,dispatchable
+SS_Zakhidnoukrainska_750,Substation,ПС 750 кВ Західноукраїнська,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Vinnytska_750,Substation,ПС 750 кВ Вінницька,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Kyivska_750,Substation,ПС 750 кВ Київська,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Pivdennoukrainska_750,Substation,ПС 750 кВ Південноукраїнська,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Dniprovska_750,Substation,ПС 750 кВ Дніпровська,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Zaporizka_750,Substation,ПС 750 кВ Запорізька,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Donbaska_750,Substation,ПС 750 кВ Донбаська,TransmissionSubstation,750.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Khmelnytska_330,Substation,ПС 330 кВ Хмельницька,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Rivnenska_330,Substation,ПС 330 кВ Рівненська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Lvivska_330,Substation,ПС 330 кВ Львівська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_IvanoFrankivska_330,Substation,ПС 330 кВ Івано-Франківська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Ternopilska_330,Substation,ПС 330 кВ Тернопільська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Chernivecka_330,Substation,ПС 330 кВ Чернівецька,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Zhytomyrska_330,Substation,ПС 330 кВ Житомирська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Cherkaska_330,Substation,ПС 330 кВ Черкаська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Poltavska_330,Substation,ПС 330 кВ Полтавська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Kharkivska_330,Substation,ПС 330 кВ Харківська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Kremenchutska_330,Substation,ПС 330 кВ Кременчуцька,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Kryvorizka_330,Substation,ПС 330 кВ Криворізька,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Mykolaivska_330,Substation,ПС 330 кВ Миколаївська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Odeska_330,Substation,ПС 330 кВ Одеська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Khersonska_330,Substation,ПС 330 кВ Херсонська,TransmissionSubstation,330.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Brovarska_110,Substation,ПС 110 кВ Броварська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Fastivska_110,Substation,ПС 110 кВ Фастівська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Stryiska_110,Substation,ПС 110 кВ Стрийська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Drohobytska_110,Substation,ПС 110 кВ Дрогобицька,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Koziatyn_110,Substation,ПС 110 кВ Козятинська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Uman_110,Substation,ПС 110 кВ Уманська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Nikopol_110,Substation,ПС 110 кВ Нікопольська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+SS_Pavlohrad_110,Substation,ПС 110 кВ Павлоградська,TransmissionSubstation,110.0,0.0,IN_SERVICE,0.0,0.0,50.0,0.0,0.0,true
+GEN_Khmelnytskyi_NPP1,GeneratingUnit,"Хмельницька АЕС, Блок 1",Nuclear,750.0,1000.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Khmelnytskyi_NPP2,GeneratingUnit,"Хмельницька АЕС, Блок 2",Nuclear,750.0,1000.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Rivne_NPP1,GeneratingUnit,"Рівненська АЕС, Блок 1",Nuclear,330.0,420.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Rivne_NPP2,GeneratingUnit,"Рівненська АЕС, Блок 2",Nuclear,330.0,420.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Rivne_NPP3,GeneratingUnit,"Рівненська АЕС, Блок 3",Nuclear,750.0,1000.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_SouthUkraine_NPP1,GeneratingUnit,"Південноукраїнська АЕС, Блок 1",Nuclear,750.0,1000.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_SouthUkraine_NPP2,GeneratingUnit,"Південноукраїнська АЕС, Блок 2",Nuclear,750.0,1000.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Trypilska_TPP_U1,GeneratingUnit,"Трипільська ТЕС, Блок 1",Thermal,330.0,300.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Trypilska_TPP_U2,GeneratingUnit,"Трипільська ТЕС, Блок 2",Thermal,330.0,300.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Burshtyn_TPP_U1,GeneratingUnit,"Бурштинська ТЕС, Блок 1",Thermal,330.0,200.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Burshtyn_TPP_U2,GeneratingUnit,"Бурштинська ТЕС, Блок 2",Thermal,330.0,200.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Ladyzhyn_TPP_U1,GeneratingUnit,"Ладижинська ТЕС, Блок 1",Thermal,330.0,300.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Ladyzhyn_TPP_U2,GeneratingUnit,"Ладижинська ТЕС, Блок 2",Thermal,330.0,300.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Kryvorizka_TPP_U1,GeneratingUnit,"Криворізька ТЕС, Блок 1",Thermal,330.0,280.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Dnipro_HPP_U1,GeneratingUnit,"Дніпровська ГЕС, Блок 1",Hydro,150.0,75.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Dnipro_HPP_U2,GeneratingUnit,"Дніпровська ГЕС, Блок 2",Hydro,150.0,75.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Dniester_HPP_U1,GeneratingUnit,"Дністровська ГЕС, Блок 1",Hydro,330.0,117.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Kakhovka_HPP_U1,GeneratingUnit,"Каховська ГЕС (відн.), Блок 1",Hydro,150.0,68.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Kremenchuk_HPP_U1,GeneratingUnit,"Кременчуцька ГЕС, Блок 1",Hydro,330.0,70.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,true
+GEN_Pokrovska_SES,GeneratingUnit,Покровська СЕС,Solar,150.0,240.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Kakhovka_SES,GeneratingUnit,Каховська СЕС,Solar,150.0,120.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Nikopol_SES,GeneratingUnit,Нікопольська СЕС,Solar,150.0,200.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Bylbasivka_SES,GeneratingUnit,Билбасівська СЕС,Solar,110.0,50.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Zaporizhia_WPP,GeneratingUnit,Запорізька ВЕС,Wind,150.0,98.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Tiligul_WPP_Ph1,GeneratingUnit,"Тилігульська ВЕС, Фаза 1",Wind,330.0,126.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Tiligul_WPP_Ph2,GeneratingUnit,"Тилігульська ВЕС, Фаза 2",Wind,330.0,150.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Dnistrovska_WPP,GeneratingUnit,Дністровська ВЕС,Wind,110.0,60.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+GEN_Oryol_WPP,GeneratingUnit,Орлівська ВЕС,Wind,110.0,100.0,OPERATIONAL,0.0,0.0,50.0,0.0,0.0,false
+STR_Dniester_PSPS_U1,EnergyStorage,"Дністровська ГАЕС, Гідроагрегат №1",PSPS,330.0,324.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_Dniester_PSPS_U2,EnergyStorage,"Дністровська ГАЕС, Гідроагрегат №2",PSPS,330.0,324.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_Kaniv_PSPS_U1,EnergyStorage,"Канівська ГАЕС, Гідроагрегат №1",PSPS,330.0,250.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_Kyiv_PSPS_U1,EnergyStorage,"Київська ГАЕС, Блок №1",PSPS,110.0,45.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_Tashlyk_PSPS_U1,EnergyStorage,"Ташлицька ГАЕС, Блок №1",PSPS,330.0,150.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_BESS_Vinnytsia_50MW,EnergyStorage,СНЕ Вінниця BESS,BESS,110.0,50.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_BESS_Kyiv_100MW,EnergyStorage,СНЕ Київ BESS,BESS,110.0,100.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+STR_BESS_Dnipro_40MW,EnergyStorage,СНЕ Дніпро BESS,BESS,110.0,40.0,READY_FCR,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Zakhidna_Vinnytska,TransmissionLine,ПЛ 750 кВ Західноукраїнська - Вінницька,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Vinnytska_Kyivska,TransmissionLine,ПЛ 750 кВ Вінницька - Київська,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Pivdenna_Vinnytska,TransmissionLine,ПЛ 750 кВ Південноукраїнська - Вінницька,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Pivdenna_Dniprovska,TransmissionLine,ПЛ 750 кВ Південноукраїнська - Дніпровська,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Dniprovska_Zaporizka,TransmissionLine,ПЛ 750 кВ Дніпровська - Запорізька,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Zaporizka_Donbaska,TransmissionLine,ПЛ 750 кВ Запорізька - Донбаська,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_750_Kyivska_Khmelnytska,TransmissionLine,ПЛ 750 кВ Київська - Хмельницька АЕС,OverheadLine,750.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Zakhidna_Lvivska,TransmissionLine,ПЛ 330 кВ Західноукраїнська - Львівська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Zakhidna_IvanoFrankivska,TransmissionLine,ПЛ 330 кВ Західноукраїнська - Івано-Франківська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Lvivska_Rivnenska,TransmissionLine,ПЛ 330 кВ Львівська - Рівненська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Rivnenska_Khmelnytska,TransmissionLine,ПЛ 330 кВ Рівненська - Хмельницька,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Khmelnytska_Ternopilska,TransmissionLine,ПЛ 330 кВ Хмельницька - Тернопільська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Ternopilska_Chernivecka,TransmissionLine,ПЛ 330 кВ Тернопільська - Чернівецька,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Chernivecka_Vinnytska,TransmissionLine,ПЛ 330 кВ Чернівецька - Вінницька,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Vinnytska_Zhytomyrska,TransmissionLine,ПЛ 330 кВ Вінницька - Житомирська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Zhytomyrska_Kyivska,TransmissionLine,ПЛ 330 кВ Житомирська - Київська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Kyivska_Cherkaska,TransmissionLine,ПЛ 330 кВ Київська - Черкаська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Cherkaska_Kremenchutska,TransmissionLine,ПЛ 330 кВ Черкаська - Кременчуцька,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Kremenchutska_Poltavska,TransmissionLine,ПЛ 330 кВ Кременчуцька - Полтавська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Poltavska_Kharkivska,TransmissionLine,ПЛ 330 кВ Полтавська - Харківська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Kharkivska_Donbaska,TransmissionLine,ПЛ 330 кВ Харківська - Донбаська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Kremenchutska_Dniprovska,TransmissionLine,ПЛ 330 кВ Кременчуцька - Дніпровська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Dniprovska_Kryvorizka,TransmissionLine,ПЛ 330 кВ Дніпровська - Криворізька,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Kryvorizka_Mykolaivska,TransmissionLine,ПЛ 330 кВ Криворізька - Миколаївська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Mykolaivska_Odeska,TransmissionLine,ПЛ 330 кВ Миколаївська - Одеська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Mykolaivska_Khersonska,TransmissionLine,ПЛ 330 кВ Миколаївська - Херсонська,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_330_Khersonska_Zaporizka,TransmissionLine,ПЛ 330 кВ Херсонська - Запорізька,OverheadLine,330.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Kyivska_Brovarska,TransmissionLine,ПЛ 110 кВ Київська - Бровари,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Kyivska_Fastivska,TransmissionLine,ПЛ 110 кВ Київська - Фастів,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Lvivska_Stryiska,TransmissionLine,ПЛ 110 кВ Львівська - Стрий,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Lvivska_Drohobytska,TransmissionLine,ПЛ 110 кВ Львівська - Дрогобич,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Vinnytska_Koziatyn,TransmissionLine,ПЛ 110 кВ Вінницька - Козятин,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Cherkaska_Uman,TransmissionLine,ПЛ 110 кВ Черкаська - Умань,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Zaporizka_Nikopol,TransmissionLine,ПЛ 110 кВ Запорізька - Нікополь,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+LINE_110_Dniprovska_Pavlohrad,TransmissionLine,ПЛ 110 кВ Дніпровська - Павлоград,OverheadLine,110.0,0.0,ENERGIZED,0.0,0.0,50.0,0.0,0.0,true
+TR_AT1_Zakhidna,Transformer,Автотрансформатор АТ-1 750/330 кВ Західноукраїнська,Autotransformer,750.0,0.0,ALARM,145.0,12.4,50.0,0.0,0.0,true
+TR_AT2_Zakhidna,Transformer,Автотрансформатор АТ-2 750/330 кВ Західноукраїнська,Autotransformer,750.0,0.0,NORMAL,25.0,0.4,50.0,0.0,0.0,true
+TR_AT1_Vinnytska,Transformer,Автотрансформатор АТ-1 750/330 кВ Вінницька,Autotransformer,750.0,0.0,NORMAL,30.0,0.2,50.0,0.0,0.0,true
+TR_AT2_Vinnytska,Transformer,Автотрансформатор АТ-2 750/330 кВ Вінницька,Autotransformer,750.0,0.0,NORMAL,28.0,0.1,50.0,0.0,0.0,true
+TR_AT1_Kyivska,Transformer,Автотрансформатор АТ-1 750/330 кВ Київська,Autotransformer,750.0,0.0,NORMAL,45.0,0.5,50.0,0.0,0.0,true
+TR_AT2_Kyivska,Transformer,Автотрансформатор АТ-2 750/330 кВ Київська,Autotransformer,750.0,0.0,WARNING,110.0,6.2,50.0,0.0,0.0,true
+TR_AT1_Dniprovska,Transformer,Автотрансформатор АТ-1 750/330 кВ Дніпровська,Autotransformer,750.0,0.0,NORMAL,22.0,0.1,50.0,0.0,0.0,true
+TR_AT1_Zaporizka,Transformer,Автотрансформатор АТ-1 750/330 кВ Запорізька,Autotransformer,750.0,0.0,NORMAL,38.0,0.3,50.0,0.0,0.0,true
+TR_AT1_Pivdenna,Transformer,Автотрансформатор АТ-1 750/330 кВ Південна,Autotransformer,750.0,0.0,NORMAL,18.0,0.1,50.0,0.0,0.0,true
+TR_T1_Khmelnytska,Transformer,Трансформатор Т-1 330/110 кВ Хмельницька,PowerTransformer,330.0,0.0,NORMAL,15.0,0.1,50.0,0.0,0.0,true
+TR_T1_Rivnenska,Transformer,Трансформатор Т-1 330/110 кВ Рівненська,PowerTransformer,330.0,0.0,NORMAL,20.0,0.2,50.0,0.0,0.0,true
+TR_T1_Lvivska,Transformer,Трансформатор Т-1 330/110 кВ Львівська,PowerTransformer,330.0,0.0,NORMAL,42.0,0.4,50.0,0.0,0.0,true
+TR_T1_Cherkaska,Transformer,Трансформатор Т-1 330/110 кВ Черкаська,PowerTransformer,330.0,0.0,NORMAL,33.0,0.3,50.0,0.0,0.0,true
+TR_T1_Poltavska,Transformer,Трансформатор Т-1 330/110 кВ Полтавська,PowerTransformer,330.0,0.0,NORMAL,19.0,0.1,50.0,0.0,0.0,true
+TR_T1_Kharkivska,Transformer,Трансформатор Т-1 330/110 кВ Харківська,PowerTransformer,330.0,0.0,NORMAL,65.0,0.8,50.0,0.0,0.0,true
+TR_T1_Kryvorizka,Transformer,Трансформатор Т-1 330/110 кВ Криворізька,PowerTransformer,330.0,0.0,ALARM,125.0,7.5,50.0,0.0,0.0,true
+TR_T1_Mykolaivska,Transformer,Трансформатор Т-1 330/110 кВ Миколаївська,PowerTransformer,330.0,0.0,NORMAL,25.0,0.2,50.0,0.0,0.0,true
+TR_T1_Odeska,Transformer,Трансформатор Т-1 330/110 кВ Одеська,PowerTransformer,330.0,0.0,NORMAL,31.0,0.2,50.0,0.0,0.0,true
+PROT_Relay_Line750_Zakhidna,ProtectionDevice,РЗА захисту ПЛ 750 Західна-Вінницька,DifferentialLine,0.0,0.0,ACTIVE,45.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line750_Vinnytska,ProtectionDevice,РЗА захисту ПЛ 750 Вінницька-Київська,DifferentialLine,0.0,0.0,ACTIVE,50.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line750_Pivdenna,ProtectionDevice,РЗА захисту ПЛ 750 Південна-Вінницька,DistanceProtection,0.0,0.0,ACTIVE,65.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line750_Dniprovska,ProtectionDevice,РЗА захисту ПЛ 750 Південна-Дніпровська,DistanceProtection,0.0,0.0,ACTIVE,55.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line750_Zaporizka,ProtectionDevice,РЗА захисту ПЛ 750 Дніпровська-Запорізька,DifferentialLine,0.0,0.0,ACTIVE,40.0,0.0,50.0,0.0,0.0,true
+PROT_Overcurrent_AT1_Zakhidna,ProtectionDevice,МТЗ автотрансформатора АТ-1 Західна,Overcurrent,0.0,0.0,ACTIVE,120.0,0.0,50.0,0.0,0.0,true
+PROT_Diff_AT2_Vinnytska,ProtectionDevice,Диференційний захист АТ-2 Вінницька,DifferentialTransformer,0.0,0.0,ACTIVE,35.0,0.0,50.0,0.0,0.0,true
+PROT_GasRelay_AT2_Kyivska,ProtectionDevice,Газове реле Бухгольца АТ-2 Київська,GasProtection,0.0,0.0,ACTIVE,200.0,0.0,50.0,0.0,0.0,true
+PROT_FCR_Vinnytsia_Auto,ProtectionDevice,Автоматика ЧРП / FCR Вінницького вузла,FrequencyProtection,0.0,0.0,ACTIVE,100.0,0.0,50.0,0.0,0.0,true
+PROT_FCR_Kyiv_Auto,ProtectionDevice,Автоматика ЧРП / FCR Київського вузла,FrequencyProtection,0.0,0.0,ACTIVE,90.0,0.0,50.0,0.0,0.0,true
+PROT_FCR_Dnipro_Auto,ProtectionDevice,Автоматика ЧРП / FCR Дніпровського вузла,FrequencyProtection,0.0,0.0,ACTIVE,95.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line330_Lviv,ProtectionDevice,Дистанційний захист ПЛ 330 Західна-Львів,DistanceProtection,0.0,0.0,ACTIVE,60.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line330_Rivnenska,ProtectionDevice,Дистанційний захист ПЛ 330 Львів-Рівне,DistanceProtection,0.0,0.0,ACTIVE,60.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line330_Cherkaska,ProtectionDevice,Дистанційний захист ПЛ 330 Київ-Черкаси,DistanceProtection,0.0,0.0,ACTIVE,65.0,0.0,50.0,0.0,0.0,true
+PROT_Relay_Line330_Kharkiv,ProtectionDevice,Дистанційний захист ПЛ 330 Полтава-Харків,DistanceProtection,0.0,0.0,ACTIVE,70.0,0.0,50.0,0.0,0.0,true
+FAULT_SC_Line750_Zakhidna,FaultEvent,Міжфазне КЗ на ПЛ 750 Західна-Вінницька,ShortCircuit,0.0,0.0,CLEARED,0.0,0.0,50.0,24.5,0.0,true
+FAULT_SC_Line750_Kyivska,FaultEvent,Однофазне КЗ на ПЛ 750 Вінницька-Київська,ShortCircuit,0.0,0.0,CLEARED,0.0,0.0,50.0,19.8,0.0,true
+FAULT_FreqDrop_4988,FaultEvent,Глибоке відхилення частоти в ОЕС України (49.88 Гц),FrequencyDeviation,0.0,0.0,CLEARED,0.0,0.0,49.88,0.0,0.0,true
+FAULT_FreqDrop_4982,FaultEvent,Аварійне зниження частоти ОЕС (49.82 Гц),FrequencyDeviation,0.0,0.0,CLEARED,0.0,0.0,49.82,0.0,0.0,true
+FAULT_Overheat_AT1_Zakhidna,FaultEvent,Високотемпературний перегрів АТ-1 Західна,ThermalOverheat,0.0,0.0,CLEARED,0.0,0.0,50.0,0.0,0.0,true
+FAULT_GasAlarm_AT2_Kyivska,FaultEvent,Газоутворення та розряди в маслі АТ-2 Київська,GasAlarm,0.0,0.0,CLEARED,0.0,0.0,50.0,0.0,0.0,true
+FAULT_SC_Line330_Lviv,FaultEvent,Коротке замикання ПЛ 330 Західна-Львів,ShortCircuit,0.0,0.0,CLEARED,0.0,0.0,50.0,14.2,0.0,true
+FAULT_SC_Line330_Kharkiv,FaultEvent,Грозове перекриття ПЛ 330 Полтава-Харків,ShortCircuit,0.0,0.0,CLEARED,0.0,0.0,50.0,16.5,0.0,true
+LOAD_ArcelorMittal_KryvyiRih,PowerConsumer,АрселорМіттал Кривий Ріг,HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,450.0,true
+LOAD_DniproAzot,PowerConsumer,"ДніпроАзот, Кам'янське",HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,180.0,true
+LOAD_Zaporizhstal,PowerConsumer,Металургійний комбінат Запоріжсталь,HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,280.0,true
+LOAD_Kyiv_Metropolitan,PowerConsumer,КП Київський метрополітен та електротранспорт,HeavyIndustrial,110.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,95.0,true
+LOAD_Lviv_Railway_Hub,PowerConsumer,Львівський залізничний вузол Укрзалізниці,HeavyIndustrial,110.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,85.0,true
+LOAD_Kharkiv_Industrial,PowerConsumer,Харківський промисловий вузол,HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,220.0,true
+LOAD_Odesa_Port_Plant,PowerConsumer,Одеський припортовий завод,HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,160.0,true
+LOAD_Mykolaiv_Shipyard,PowerConsumer,Миколаївський промисловий суднобудівний кластер,HeavyIndustrial,110.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,75.0,true
+LOAD_Poltava_GOK,PowerConsumer,Полтавський гірничо-збагачувальний комбінат,HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,140.0,true
+LOAD_Vinnytsia_Cluster,PowerConsumer,Вінницький агропромисловий індустріальний парк,HeavyIndustrial,110.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,65.0,true
+LOAD_Brovary_TechPark,PowerConsumer,Броварський логістично-технологічний комплекс,HeavyIndustrial,110.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,45.0,true
+LOAD_Cherkasy_Azot,PowerConsumer,ПрАТ Азот Черкаси,HeavyIndustrial,330.0,0.0,CONNECTED,0.0,0.0,50.0,0.0,210.0,true

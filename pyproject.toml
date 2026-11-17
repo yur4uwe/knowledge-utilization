@@ -3,6 +3,7 @@ name = "domain-knowledge-hub"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
+    "neo4j>=6.4.1",
     "pyshacl>=0.40.1",
     "pytest>=9.1.1",
     "python-dotenv>=1.2.4",
