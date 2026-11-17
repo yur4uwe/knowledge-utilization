@@ -21,7 +21,7 @@ ORDER BY DESC(?powerMW)
 ```
 * **Cypher (ЛР 9):**
 ```cypher
-MATCH (source)-[r:SUPPLIES_POWER_TO]->(s:Substation {id: 'SS_Vinnytska_750'})
+MATCH (source)-[r:SUPPLIES_POWER_TO]->(s:Substation {id: 'Substation_Vinnytska_750kV'})
 RETURN source.name AS assetName, source.capacityMW AS powerMW, source.status AS operatingStatus
 ORDER BY powerMW DESC;
 ```
@@ -114,7 +114,7 @@ ASK {
 ```
 * **Cypher (ЛР 9):**
 ```cypher
-MATCH (s1:Substation {id: 'SS_Zakhidnoukrainska_750'}), (s2:Substation {id: 'SS_Kyivska_750'})
+MATCH (s1:Substation {id: 'Substation_Zakhidnoukrainska_750kV'}), (s2:Substation {id: 'Kyivska_Substation_750kV'})
 MATCH p = shortestPath((s1)-[:CONNECTED_TO*..10]-(s2))
 RETURN length(p) AS hopCount, [n IN nodes(p) | n.name] AS transitNodes;
 ```

@@ -85,7 +85,7 @@ def main():
         try:
             session.run("""
                 CREATE (s:Substation {
-                    id: 'SS_Vinnytska_750',
+                    id: 'Substation_Vinnytska_750kV',
                     name: 'Дублікат ПС Вінницька 750 кВ',
                     voltageKV: 750.0
                 })

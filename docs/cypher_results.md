@@ -17,7 +17,7 @@
 * **Компетентнісне питання:** Які електростанції та накопичувачі підключені до вказаної підстанції і скільки МВт вони видають?
 * **Текст Cypher-запиту:**
 ```cypher
-MATCH (source)-[r:SUPPLIES_POWER_TO]->(s:Substation {id: 'SS_Vinnytska_750'})
+MATCH (source)-[r:SUPPLIES_POWER_TO]->(s:Substation {id: 'Substation_Vinnytska_750kV'})
 OPTIONAL MATCH (source)-[:INSTALLED_AT]->(loc:Substation)
 RETURN source.id AS assetId,
        source.name AS assetName,
@@ -32,14 +32,15 @@ ORDER BY capacityMW DESC;
 
 | assetId | assetName | assetCategory | technologyType | capacityMW | status | telemetrySource |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `GEN_Khmelnytskyi_NPP2` | Хмельницька АЕС, Блок 2 | `GeneratingUnit` | `Nuclear` | 1000.0 | `OPERATIONAL` | `CIM_Topology` |
-| `STR_Dniester_PSPS_U1` | Дністровська ГАЕС, Гідроагрегат №1 | `EnergyStorage` | `PSPS` | 324.0 | `READY_FCR` | `CIM_Topology` |
-| `GEN_Ladyzhyn_TPP_U1` | Ладижинська ТЕС, Блок 1 | `GeneratingUnit` | `Thermal` | 300.0 | `OPERATIONAL` | `CIM_Topology` |
-| `GEN_Ladyzhyn_TPP_U2` | Ладижинська ТЕС, Блок 2 | `GeneratingUnit` | `Thermal` | 300.0 | `OPERATIONAL` | `CIM_Topology` |
-| `GEN_Pokrovska_SES` | Покровська СЕС | `GeneratingUnit` | `Solar` | 240.0 | `OPERATIONAL` | `CIM_Topology` |
-| `GEN_Kakhovka_SES` | Каховська СЕС | `GeneratingUnit` | `Solar` | 120.0 | `OPERATIONAL` | `CIM_Topology` |
-| `GEN_Zaporizhia_WPP` | Запорізька ВЕС | `GeneratingUnit` | `Wind` | 98.0 | `OPERATIONAL` | `CIM_Topology` |
-| `STR_BESS_Vinnytsia_50MW` | СНЕ Вінниця BESS | `EnergyStorage` | `BESS` | 50.0 | `READY_FCR` | `CIM_Topology` |
+| `KhmelnytskyiNPP_Unit2` | Хмельницька АЕС, Енергоблок №2 | `GeneratingUnit` | `Nuclear` | 1000.0 | `OPERATIONAL` | `CIM_Topology` |
+| `Dniester_PSPS_Unit` | Дністровська ГАЕС, Гідроагрегат №1 | `EnergyStorage` | `PSPS` | 324.0 | `STANDBY_SPINNING_RESERVE` | `data/kb.ttl` |
+| `Ladyzhyn_TPP_Unit1` | Ладижинська ТЕС, Блок №1 | `GeneratingUnit` | `Thermal` | 300.0 | `OPERATIONAL` | `CIM_Topology` |
+| `Ladyzhyn_TPP_Unit2` | Ладижинська ТЕС, Блок №2 | `GeneratingUnit` | `Thermal` | 300.0 | `OPERATIONAL` | `CIM_Topology` |
+| `Pokrovska_Solar_SES` | Покровська СЕС | `GeneratingUnit` | `Solar` | 240.0 | `IN_SERVICE_VARIABLE` | `data/kb.ttl` |
+| `Kakhovka_Solar_SES` | Каховська СЕС | `GeneratingUnit` | `Solar` | 120.0 | `IN_SERVICE_VARIABLE` | `data/kb.ttl` |
+| `Zaporizhia_Wind_WPP` | Запорізька ВЕС | `GeneratingUnit` | `Wind` | 98.0 | `IN_SERVICE_VARIABLE` | `data/kb.ttl` |
+| `Dnipro_HPP_Unit1` | Дніпровська ГЕС, Гідроагрегат №1 | `GeneratingUnit` | `Hydro` | 75.0 | `IN_SERVICE_LOAD_FOLLOWING` | `data/kb.ttl` |
+| `BESS_Vinnytsia_50MW` | СНЕ Вінниця BESS | `EnergyStorage` | `BESS` | 50.0 | `READY_FCR` | `CIM_Topology` |
 
 * **Інженерна інтерпретація:** ПС «Вінницька» виступає ключовим системним енерговузлом Правобережної України із загальною встановленою підключеною потужністю 2432 МВт. Вузол має високий балансуючий потенціал завдяки гідроакумулюванню (Дністровська ГАЕС, 324 МВт) та швидкому акумуляторному резерву BESS (50 МВт), що компенсують нестабільність СЕС і ВЕС.
 
@@ -146,7 +147,7 @@ RETURN event.id AS eventId,
 * **Компетентнісне питання:** Як диспетчер може перенаправити транзит між підстанціями при перевантаженні лінії?
 * **Текст Cypher-запиту:**
 ```cypher
-MATCH path = (s1:Substation {id: 'SS_Zakhidnoukrainska_750'})-[:CONNECTED_TO*1..3]-(s2:Substation {id: 'SS_Kyivska_750'})
+MATCH path = (s1:Substation {id: 'Substation_Zakhidnoukrainska_750kV'})-[:CONNECTED_TO*1..3]-(s2:Substation {id: 'Kyivska_Substation_750kV'})
 WHERE s1 <> s2
 WITH path, length(path) AS hopCount, [n IN nodes(path) | n.name] AS routeNodes
 RETURN hopCount,
@@ -204,7 +205,7 @@ ORDER BY t.dgaC2H2Ppm DESC, t.dgaH2Ppm DESC;
 * **Компетентнісне питання:** Чи є прямий або транзитний зв'язок між підстанціями та яка мінімальна довжина?
 * **Текст Cypher-запиту:**
 ```cypher
-MATCH (s1:Substation {id: 'SS_Zakhidnoukrainska_750'}), (s2:Substation {id: 'SS_Donbaska_750'})
+MATCH (s1:Substation {id: 'Substation_Zakhidnoukrainska_750kV'}), (s2:Substation {id: 'Substation_Donbaska_750kV'})
 MATCH p = shortestPath((s1)-[:CONNECTED_TO*..10]-(s2))
 RETURN length(p) AS shortestTransitHops,
        [n IN nodes(p) | n.name] AS transitSubstations,
@@ -226,7 +227,7 @@ RETURN length(p) AS shortestTransitHops,
 * **Компетентнісне питання:** Яким диспетчеризованим енергоблокам необхідно скоригувати генерацію при аварійному відключенні зв'язку?
 * **Текст Cypher-запиту:**
 ```cypher
-MATCH (fault:FaultEvent {id: 'FAULT_SC_Line750_Zakhidna'})-[:AFFECTS_ASSET]->(line:TransmissionLine)
+MATCH (fault:FaultEvent {id: 'ShortCircuit_Fault_Line750'})-[:AFFECTS_ASSET]->(line:TransmissionLine)
 MATCH (line)<-[:CONNECTED_TO]-(sub:Substation)
 MATCH (gen:GeneratingUnit)-[:SUPPLIES_POWER_TO]->(sub)
 WHERE gen.dispatchable = true
@@ -256,7 +257,7 @@ ORDER BY currentOutputMW DESC;
 * **Файл:** `queries/q09_impact_analysis_fault_cascade.cypher`
 * **Текст Cypher-запиту:**
 ```cypher
-MATCH path = (fault:FaultEvent {id: 'FAULT_SC_Line750_Zakhidna'})
+MATCH path = (fault:FaultEvent {id: 'ShortCircuit_Fault_Line750'})
              -[:AFFECTS_ASSET]->(line:TransmissionLine)
              <-[:CONNECTED_TO]-(sub:Substation)
              -[:FEEDS_LOAD|CONNECTED_TO*1..3]->(affected)
@@ -281,7 +282,7 @@ LIMIT 10;
 * **Файл:** `queries/q10_impact_analysis_substation_failure.cypher`
 * **Текст Cypher-запиту:**
 ```cypher
-MATCH path = (root:Substation {id: 'SS_Kyivska_750'})-[:CONNECTED_TO|FEEDS_LOAD|SUPPLIES_POWER_TO*1..3]-(target)
+MATCH path = (root:Substation {id: 'Kyivska_Substation_750kV'})-[:CONNECTED_TO|FEEDS_LOAD|SUPPLIES_POWER_TO*1..3]-(target)
 WHERE target <> root
 WITH root, target, length(path) AS cascadeHop, labels(target)[0] AS targetClass
 RETURN cascadeHop,

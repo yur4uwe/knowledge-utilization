@@ -1,6 +1,6 @@
 // CQ1: Які електростанції та накопичувачі підключені до підстанції і скільки МВт вони видають?
 // Конструкції: MATCH, OPTIONAL MATCH, WHERE, ORDER BY
-MATCH (source)-[r:SUPPLIES_POWER_TO]->(s:Substation {id: 'SS_Vinnytska_750'})
+MATCH (source)-[r:SUPPLIES_POWER_TO]->(s:Substation {id: 'Substation_Vinnytska_750kV'})
 OPTIONAL MATCH (source)-[:INSTALLED_AT]->(loc:Substation)
 RETURN source.id AS assetId,
        source.name AS assetName,

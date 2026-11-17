@@ -14,7 +14,7 @@
     {
       "id": "Q02",
       "question": "Які електростанції видають потужність на ПС Вінницька 750 кВ?",
-      "generated_cypher": "MATCH (g:GeneratingUnit)-[:SUPPLIES_POWER_TO]->(s:Substation {id: 'SS_Vinnytska_750'}) RETURN g.name, g.capacityMW ORDER BY g.capacityMW DESC LIMIT 50",
+      "generated_cypher": "MATCH (g:GeneratingUnit)-[:SUPPLIES_POWER_TO]->(s:Substation {id: 'Substation_Vinnytska_750kV'}) RETURN g.name, g.capacityMW ORDER BY g.capacityMW DESC LIMIT 50",
       "status": "success",
       "error": null
     },
@@ -49,14 +49,14 @@
     {
       "id": "Q07",
       "question": "Який пристрій захисту та час вимкнення спрацювали при короткому замиканні на лінії Західна-Вінницька?",
-      "generated_cypher": "MATCH (f:FaultEvent {id: 'FAULT_SC_Line750_Zakhidna'})-[:TRIGGERS_ACTION]->(p:ProtectionDevice) RETURN p.name, p.tripTimeMS LIMIT 50",
+      "generated_cypher": "MATCH (f:FaultEvent {id: 'ShortCircuit_Fault_Line750'})-[:TRIGGERS_ACTION]->(p:ProtectionDevice) RETURN p.name, p.tripTimeMS LIMIT 50",
       "status": "success",
       "error": null
     },
     {
       "id": "Q08",
       "question": "Які споживачі живляться від ПС Київська 750 кВ та яке їхнє навантаження?",
-      "generated_cypher": "MATCH (s:Substation {id: 'SS_Kyivska_750'})-[:FEEDS_LOAD]->(c:PowerConsumer) RETURN c.name, c.demandMW LIMIT 50",
+      "generated_cypher": "MATCH (s:Substation {id: 'Kyivska_Substation_750kV'})-[:FEEDS_LOAD]->(c:PowerConsumer) RETURN c.name, c.demandMW LIMIT 50",
       "status": "success",
       "error": null
     },
@@ -77,7 +77,7 @@
     {
       "id": "Q11",
       "question": "Які трансформатори встановлені на ПС Західноукраїнська 750 кВ?",
-      "generated_cypher": "MATCH (t:Transformer)-[:INSTALLED_AT]->(s:Substation {id: 'SS_Zakhidnoukrainska_750'}) RETURN t.name, t.voltageKV, t.status LIMIT 50",
+      "generated_cypher": "MATCH (t:Transformer)-[:INSTALLED_AT]->(s:Substation {id: 'Substation_Zakhidnoukrainska_750kV'}) RETURN t.name, t.voltageKV, t.status LIMIT 50",
       "status": "success",
       "error": null
     },
@@ -91,7 +91,7 @@
     {
       "id": "Q13",
       "question": "Знайди найкоротший шлях між ПС Західноукраїнська 750 кВ та ПС Київська 750 кВ",
-      "generated_cypher": "MATCH (s1:Substation {id: 'SS_Zakhidnoukrainska_750'}), (s2:Substation {id: 'SS_Kyivska_750'}) MATCH p = shortestPath((s1)-[:CONNECTED_TO*..10]-(s2)) RETURN [n IN nodes(p) | n.name] AS pathNodes, length(p) AS hopCount LIMIT 50",
+      "generated_cypher": "MATCH (s1:Substation {id: 'Substation_Zakhidnoukrainska_750kV'}), (s2:Substation {id: 'Kyivska_Substation_750kV'}) MATCH p = shortestPath((s1)-[:CONNECTED_TO*..10]-(s2)) RETURN [n IN nodes(p) | n.name] AS pathNodes, length(p) AS hopCount LIMIT 50",
       "status": "success",
       "error": null
     },

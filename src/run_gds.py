@@ -100,7 +100,7 @@ def main():
         # Query 2: Optimized - labeled nodes with indexed property match
         profile_opt = session.run("""
             PROFILE
-            MATCH (a:Substation {id: 'SS_Vinnytska_750'})-[:CONNECTED_TO*1..2]-(b:Substation {id: 'SS_Kyivska_750'})
+            MATCH (a:Substation {id: 'Substation_Vinnytska_750kV'})-[:CONNECTED_TO*1..2]-(b:Substation {id: 'Kyivska_Substation_750kV'})
             RETURN count(*) AS cnt
         """).consume().profile
 

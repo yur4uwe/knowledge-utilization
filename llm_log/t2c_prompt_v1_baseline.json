@@ -49,14 +49,14 @@
     {
       "id": "Q07",
       "question": "Який пристрій захисту та час вимкнення спрацювали при короткому замиканні на лінії Західна-Вінницька?",
-      "generated_cypher": "MATCH (f:FaultEvent {id: 'FAULT_SC_Line750_Zakhidna'})-[:TRIGGERS_ACTION]->(p:ProtectionDevice) RETURN p.name, p.tripTimeMS",
+      "generated_cypher": "MATCH (f:FaultEvent {id: 'ShortCircuit_Fault_Line750'})-[:TRIGGERS_ACTION]->(p:ProtectionDevice) RETURN p.name, p.tripTimeMS",
       "status": "success",
       "error": null
     },
     {
       "id": "Q08",
       "question": "Які споживачі живляться від ПС Київська 750 кВ та яке їхнє навантаження?",
-      "generated_cypher": "MATCH (s:Substation {id: 'SS_Kyivska_750'})-[:FEEDS_LOAD]->(c:PowerConsumer) RETURN c.name, c.demandMW",
+      "generated_cypher": "MATCH (s:Substation {id: 'Kyivska_Substation_750kV'})-[:FEEDS_LOAD]->(c:PowerConsumer) RETURN c.name, c.demandMW",
       "status": "success",
       "error": null
     },
@@ -77,7 +77,7 @@
     {
       "id": "Q11",
       "question": "Які трансформатори встановлені на ПС Західноукраїнська 750 кВ?",
-      "generated_cypher": "MATCH (t:Transformer)-[:LOCATED_IN]->(s:Substation {id: 'SS_Zakhidnoukrainska_750'}) RETURN t.name",
+      "generated_cypher": "MATCH (t:Transformer)-[:LOCATED_IN]->(s:Substation {id: 'Substation_Zakhidnoukrainska_750kV'}) RETURN t.name",
       "status": "schema_error",
       "error": "Unknown relationship :LOCATED_IN instead of :INSTALLED_AT"
     },
@@ -91,7 +91,7 @@
     {
       "id": "Q13",
       "question": "Знайди найкоротший шлях між ПС Західноукраїнська 750 кВ та ПС Київська 750 кВ",
-      "generated_cypher": "MATCH p = shortestPath((s1:Substation {id: 'SS_Zakhidnoukrainska_750'})-[*]-(s2:Substation {id: 'SS_Kyivska_750'})) RETURN p",
+      "generated_cypher": "MATCH p = shortestPath((s1:Substation {id: 'Substation_Zakhidnoukrainska_750kV'})-[*]-(s2:Substation {id: 'Kyivska_Substation_750kV'})) RETURN p",
       "status": "success",
       "error": null
     },

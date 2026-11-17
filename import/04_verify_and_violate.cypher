@@ -13,10 +13,10 @@ SHOW INDEXES;
 // ==========================================
 // 3. Демонстрація порушення унікального обмеження (C4)
 // Очікувана помилка: Neo.ClientError.Schema.ConstraintValidationFailed
-// Спроба створити підстанцію з уже наявним унікальним id 'SS_Vinnytska_750'
+// Спроба створити підстанцію з уже наявним унікальним id 'Substation_Vinnytska_750kV'
 // ==========================================
 CREATE (s:Substation {
-    id: 'SS_Vinnytska_750',
+    id: 'Substation_Vinnytska_750kV',
     name: 'Дублікат ПС Вінницька 750 кВ',
     voltageKV: 750.0
 });
